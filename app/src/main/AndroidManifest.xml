@@ -17,6 +17,7 @@
         >
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.ShoesPlanet.NoActionBar"
             android:exported="true"
             >
             <intent-filter>
