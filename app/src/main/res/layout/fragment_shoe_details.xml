@@ -34,8 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/brand_icon"
-            app:layout_constraintStart_toStartOf="parent"
             android:src="@drawable/ic_brand_24"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_model"
             />
 
@@ -130,10 +130,96 @@
             />
 
         <!-- Size -->
+        <ImageView
+            android:id="@+id/ic_shoe_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/shoe_color_icon"
+            android:src="@drawable/ic_size_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_shoe_color"
+            />
+
+        <TextView
+            android:id="@+id/shoe_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@id/ic_shoe_size"
+            app:layout_constraintStart_toEndOf="@id/ic_shoe_size"
+            app:layout_constraintTop_toTopOf="@id/ic_shoe_size"
+            tools:text="Size"
+            />
+
+        <View
+            android:id="@+id/divider_shoe_size"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_shoe_size"
+            />
 
         <!-- In Stock? -->
+        <ImageView
+            android:id="@+id/ic_in_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/shoe_color_icon"
+            android:src="@drawable/ic_in_stock_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_shoe_size"
+            />
+
+        <TextView
+            android:id="@+id/in_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@id/ic_in_stock"
+            app:layout_constraintStart_toEndOf="@id/ic_in_stock"
+            app:layout_constraintTop_toTopOf="@id/ic_in_stock"
+            tools:text="In Stock?"
+            />
+
+        <View
+            android:id="@+id/divider_in_stock"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_in_stock"
+            />
 
         <!-- Notes -->
+        <ImageView
+            android:id="@+id/ic_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/shoe_color_icon"
+            android:src="@drawable/ic_notes_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_in_stock"
+            />
+
+        <TextView
+            android:id="@+id/shoe_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@id/ic_notes"
+            app:layout_constraintStart_toEndOf="@id/ic_notes"
+            app:layout_constraintTop_toTopOf="@id/ic_notes"
+            tools:text="Notes"
+            />
 
         <!-- FAB: Edit -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
