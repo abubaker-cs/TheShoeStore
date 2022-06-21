@@ -172,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="Save"
+                android:text="@string/fab_save"
                 />
 
             <!-- Button: Delete -->
@@ -181,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Delete"
+                android:text="@string/fab_delete"
                 android:visibility="gone"
                 />
 

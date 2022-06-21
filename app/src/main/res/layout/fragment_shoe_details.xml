@@ -15,110 +15,125 @@
         tools:context=".ui.ShoeDetailFragment"
         >
 
-        <!--  -->
+        <!-- Model Name -->
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/shoe_model"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Brand Name"
-            />
-
-        <!-- Model -->
-        <ImageView
-            android:id="@+id/ic_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_add_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            />
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textAppearance="?attr/textAppearanceBody2"
-            app:layout_constraintBottom_toBottomOf="@id/ic_location"
-            app:layout_constraintStart_toEndOf="@id/ic_location"
-            app:layout_constraintTop_toTopOf="@id/ic_location"
             tools:text="Shoe Model"
             />
 
+        <!-- Brand Name -->
+        <ImageView
+            android:id="@+id/ic_brand_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/brand_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_brand_24"
+            app:layout_constraintTop_toBottomOf="@id/shoe_model"
+            />
+
+        <TextView
+            android:id="@+id/brand_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@id/ic_brand_name"
+            app:layout_constraintStart_toEndOf="@id/ic_brand_name"
+            app:layout_constraintTop_toTopOf="@id/ic_brand_name"
+            tools:text="Brand Name"
+            />
+
         <View
-            android:id="@+id/divider_location"
+            android:id="@+id/divider_brand_name"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="16dp"
             android:background="?attr/dividerHorizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ic_location"
+            app:layout_constraintTop_toBottomOf="@id/ic_brand_name"
             />
+
+        <!-- Price -->
+        <ImageView
+            android:id="@+id/ic_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/price_icon"
+            android:src="@drawable/ic_price_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_brand_name"
+            />
+
+        <TextView
+            android:id="@+id/shoe_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@id/ic_price"
+            app:layout_constraintStart_toEndOf="@id/ic_price"
+            app:layout_constraintTop_toTopOf="@id/ic_price"
+            tools:text="Price"
+            />
+
+        <View
+            android:id="@+id/divider_shoe_price"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_price"
+            />
+
+        <!-- Color -->
+        <ImageView
+            android:id="@+id/ic_shoe_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/shoe_color_icon"
+            android:src="@drawable/ic_color_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_shoe_price"
+            />
+
+        <TextView
+            android:id="@+id/shoe_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="@id/ic_shoe_color"
+            app:layout_constraintStart_toEndOf="@id/ic_shoe_color"
+            app:layout_constraintTop_toTopOf="@id/ic_shoe_color"
+            tools:text="Color"
+            />
+
+        <View
+            android:id="@+id/divider_shoe_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_shoe_color"
+            />
+
+        <!-- Size -->
 
         <!-- In Stock? -->
-        <ImageView
-            android:id="@+id/ic_calendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_store_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_location"
-            />
-
-        <TextView
-            android:id="@+id/stock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textAppearance="?attr/textAppearanceBody2"
-            app:layout_constraintBottom_toBottomOf="@id/ic_calendar"
-            app:layout_constraintStart_toEndOf="@id/ic_calendar"
-            app:layout_constraintTop_toTopOf="@+id/ic_calendar"
-            tools:text="In Season"
-            />
-
-        <View
-            android:id="@+id/divider_season"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="16dp"
-            android:background="?attr/dividerHorizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ic_calendar"
-            />
 
         <!-- Notes -->
-        <ImageView
-            android:id="@+id/ic_note"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_notes_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_season"
-            />
-
-        <TextView
-            android:id="@+id/notes"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
-            android:ellipsize="end"
-            android:maxLines="6"
-            android:singleLine="false"
-            android:textAppearance="?attr/textAppearanceBody2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ic_note"
-            app:layout_constraintTop_toTopOf="@+id/ic_note"
-            tools:text="Notes"
-            />
 
         <!-- FAB: Edit -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -127,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:contentDescription="Edit Shoe"
+            android:contentDescription="@string/fab_edit"
             android:src="@drawable/ic_edit_shoe"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
