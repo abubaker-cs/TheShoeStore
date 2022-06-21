@@ -78,7 +78,51 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- -->
+
+        <!-- Color -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shoe_color_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Shoe Color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoe_price_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_color_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textAutoComplete"
+                android:singleLine="true"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Size -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/shoe_size_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Shoe Size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoe_color_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_size_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textAutoComplete"
+                android:singleLine="true"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- In Stock? -->
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/in_stock_checkbox"
             android:layout_width="wrap_content"
@@ -86,7 +130,7 @@
             android:layout_marginTop="16dp"
             android:text="In Stock"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_price_label"
+            app:layout_constraintTop_toBottomOf="@id/shoe_size_label"
             />
 
         <!-- Notes -->
