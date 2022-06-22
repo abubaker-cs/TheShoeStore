@@ -61,6 +61,7 @@ class ShoeDetailsFragment : Fragment() {
 
             shoe = selectedShoe
 
+            //
             bindShoe(shoe)
 
         }
