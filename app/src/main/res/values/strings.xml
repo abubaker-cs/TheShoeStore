@@ -10,4 +10,6 @@
     <string name="price_icon">Price Icon</string>
     <string name="brand_icon">Brand Icon</string>
     <string name="shoe_color_icon">Shoe Color Icon</string>
+    <string name="in_stock">Currently in stock</string>
+    <string name="out_of_stock">Currently out of stock</string>
 </resources>
