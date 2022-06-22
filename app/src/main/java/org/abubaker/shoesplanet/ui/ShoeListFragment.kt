@@ -5,15 +5,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import org.abubaker.shoesplanet.BaseApplication
 import org.abubaker.shoesplanet.R
-
+import org.abubaker.shoesplanet.databinding.FragmentShoeListBinding
+import org.abubaker.shoesplanet.ui.adapter.ShoeListAdapter
+import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
+import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
 
 /**
- * A simple [Fragment] subclass.
- * Use the [ShoeListFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * FILE 07
+ *
+ * This file will display all records from the database.
  */
 class ShoeListFragment : Fragment() {
+
+    // TO DO: Refactor the creation of the view model to take an instance of
+    //  ShoeViewModelFactory. The factory should take an instance of the Database retrieved
+    //  from BaseApplication
+    private val viewModel: ShoeViewModel by activityViewModels {
+        ShoeViewModelFactory(
+            (activity?.application as BaseApplication).database.shoeDao()
+        )
+    }
+
+    private var _binding: FragmentShoeListBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -21,7 +42,50 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shoe_list, container, false)
+        // return inflater.inflate(R.layout.fragment_shoe_list, container, false)
+
+        // Inflate the layout for this fragment
+        _binding = FragmentShoeListBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val adapter = ShoeListAdapter { shoe ->
+
+            // List > Details
+            val action =
+                ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(shoe.id)
+
+            //
+            findNavController().navigate(action)
+        }
+
+        // TO DO: observe the list of shoes from the view model and submit it the adapter
+        viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
+
+            shoes.let {
+                adapter.submitList(it)
+            }
+
+        }
+
+        binding.apply {
+
+            recyclerView.adapter = adapter
+
+            addShoeFab.setOnClickListener {
+
+                findNavController().navigate(
+                    R.id.action_shoeListFragment_to_addShoeFragment
+                )
+
+            }
+
+        }
+    }
+
 
 }
