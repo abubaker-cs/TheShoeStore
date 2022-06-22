@@ -97,9 +97,11 @@ class AddShoeFragment : Fragment() {
         if (isValidEntry()) {
 
             viewModel.addShoe(
+                binding.shoeModelInput.text.toString(),
                 binding.brandNameInput.text.toString(),
-                binding.modelInput.text.toString(),
-                binding.priceInput.text.toString(),
+                binding.shoePriceInput.text.toString(),
+                binding.shoeColorInput.text.toString(),
+                binding.shoeSizeInput.text.toString(),
                 binding.inStockCheckbox.isChecked,
                 binding.notesInput.text.toString()
             )
