@@ -48,13 +48,16 @@ class ShoeListAdapter(
     //
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoeViewHolder {
 
-        //
-        val layoutInflater = LayoutInflater.from(parent.context)
-
-        //
+//        //
+//        val layoutInflater = LayoutInflater.from(parent.context)
+//
+//        //
         return ShoeViewHolder(
-            ListItemShoeBinding.inflate(layoutInflater, parent, false)
+            // ListItemShoeBinding.inflate(layoutInflater, parent, false)
+            ListItemShoeBinding.inflate(LayoutInflater.from(parent.context))
+
         )
+
 
     }
 
@@ -62,15 +65,15 @@ class ShoeListAdapter(
     override fun onBindViewHolder(holder: ShoeViewHolder, position: Int) {
 
         //
-        val shoe = getItem(position)
+        val currentItem = getItem(position)
 
         //
         holder.itemView.setOnClickListener {
-            clickListener(shoe)
+            clickListener(currentItem)
         }
 
         //
-        holder.bind(shoe)
+        holder.bind(currentItem)
     }
 
 }

@@ -12,9 +12,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "shoes_database")
 data class Shoe(
 
+    // @ColumnInfo(name = "id")
     // Primary Key
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
     val id: Long = 0,
 
     // Model

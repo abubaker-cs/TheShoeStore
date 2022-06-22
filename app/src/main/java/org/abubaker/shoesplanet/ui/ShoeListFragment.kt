@@ -21,6 +21,12 @@ import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
  */
 class ShoeListFragment : Fragment() {
 
+    private var _binding: FragmentShoeListBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
     // TO DO: Refactor the creation of the view model to take an instance of
     //  ShoeViewModelFactory. The factory should take an instance of the Database retrieved
     //  from BaseApplication
@@ -30,17 +36,10 @@ class ShoeListFragment : Fragment() {
         )
     }
 
-    private var _binding: FragmentShoeListBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         // return inflater.inflate(R.layout.fragment_shoe_list, container, false)
 
@@ -63,12 +62,15 @@ class ShoeListFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-        // TO DO: observe the list of shoes from the view model and submit it the adapter
+        /**
+         * TODO: BUG is happening due to these lines
+         */
+        // Observe the list of shoes from the viewModel and submit it the adapter
         viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
 
-            shoes.let {
-                adapter.submitList(it)
-            }
+//            shoes.let {
+//                adapter.submitList(it)
+//            }
 
         }
 
