@@ -68,9 +68,9 @@ class ShoeListFragment : Fragment() {
         // Observe the list of shoes from the viewModel and submit it the adapter
         viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
 
-//            shoes.let {
-//                adapter.submitList(it)
-//            }
+            shoes.let {
+                adapter.submitList(it)
+            }
 
         }
 
