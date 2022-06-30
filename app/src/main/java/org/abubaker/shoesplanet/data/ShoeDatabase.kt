@@ -16,6 +16,7 @@ import org.abubaker.shoesplanet.model.Shoe
 abstract class ShoeDatabase : RoomDatabase() {
 
     //
+    // abstract fun shoeDao(): ShoeDao
     abstract fun shoeDao(): ShoeDao
 
     //

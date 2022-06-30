@@ -62,6 +62,8 @@ class ShoeListFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        // lifecycle.coroutineScope.launch {}
+
         /**
          * TODO: BUG is happening due to these lines
          */
@@ -72,7 +74,9 @@ class ShoeListFragment : Fragment() {
                 adapter.submitList(it)
             }
 
+
         }
+
 
         binding.apply {
 

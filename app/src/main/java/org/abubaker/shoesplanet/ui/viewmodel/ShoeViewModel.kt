@@ -73,6 +73,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
             inStock = inStock,
             notes = notes
         )
+
         viewModelScope.launch(Dispatchers.IO) {
 
             // TO DO: call the DAO method to update a shoe to the database here

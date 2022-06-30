@@ -48,14 +48,8 @@ class ShoeListAdapter(
     //
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoeViewHolder {
 
-//        //
-//        val layoutInflater = LayoutInflater.from(parent.context)
-//
-//        //
         return ShoeViewHolder(
-            // ListItemShoeBinding.inflate(layoutInflater, parent, false)
             ListItemShoeBinding.inflate(LayoutInflater.from(parent.context))
-
         )
 
 

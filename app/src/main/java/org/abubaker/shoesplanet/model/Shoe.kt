@@ -1,5 +1,6 @@
 package org.abubaker.shoesplanet.model
 
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -22,19 +23,19 @@ data class Shoe(
     val modelNumber: String,
 
     // Brand
-    @ColumnInfo(name = "brand_name")
+    @NonNull @ColumnInfo(name = "brand_name")
     val brandName: String,
 
     // Price
-    @ColumnInfo(name = "shoe_price")
+    @NonNull @ColumnInfo(name = "shoe_price")
     val shoePrice: String,
 
     // Color
-    @ColumnInfo(name = "shoe_color")
+    @NonNull @ColumnInfo(name = "shoe_color")
     val shoeColor: String,
 
     // Size
-    @ColumnInfo(name = "shoe_size")
+    @NonNull @ColumnInfo(name = "shoe_size")
     val shoeSize: String,
 
     // Stock Availability
