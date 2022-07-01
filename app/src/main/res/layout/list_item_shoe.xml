@@ -48,13 +48,25 @@
             tools:hint="Shoe Brand"
             />
 
+        <TextView
+            android:id="@+id/shoe_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.shoePrice}"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shoe_brand"
+            tools:hint="Unit Price"
+            />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:background="?attr/dividerHorizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_brand"
+            app:layout_constraintTop_toBottomOf="@id/shoe_price"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
