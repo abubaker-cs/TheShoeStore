@@ -10,7 +10,7 @@
     <fragment
         android:id="@+id/shoeListFragment"
         android:name="org.abubaker.shoesplanet.ui.ShoeListFragment"
-        android:label="fragment_shoe_list"
+        android:label="@string/list_fragment_title"
         tools:layout="@layout/fragment_shoe_list"
         >
 
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/shoeDetailsFragment"
         android:name="org.abubaker.shoesplanet.ui.ShoeDetailsFragment"
-        android:label="fragment_shoe_details"
+        android:label="@string/details_fragment_title"
         tools:layout="@layout/fragment_shoe_details"
         >
 
@@ -54,7 +54,7 @@
     <fragment
         android:id="@+id/addShoeFragment"
         android:name="org.abubaker.shoesplanet.ui.AddShoeFragment"
-        android:label="fragment_add_shoe"
+        android:label="@string/add_fragment_title"
         tools:layout="@layout/fragment_add_shoe"
         >
 

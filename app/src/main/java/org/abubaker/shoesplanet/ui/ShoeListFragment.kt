@@ -64,9 +64,6 @@ class ShoeListFragment : Fragment() {
 
         // lifecycle.coroutineScope.launch {}
 
-        /**
-         * TODO: BUG is happening due to these lines
-         */
         // Observe the list of shoes from the viewModel and submit it the adapter
         viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
 
