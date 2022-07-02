@@ -26,6 +26,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
     fun addShoe(
         model: String,
         brand: String,
+        type: String,
         price: String,
         color: String,
         size: String,
@@ -35,6 +36,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
         val shoe = Shoe(
             modelNumber = model,
             brandName = brand,
+            shoeType = type,
             shoePrice = price,
             shoeColor = color,
             shoeSize = size,
@@ -57,6 +59,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
         id: Long,
         model: String,
         brand: String,
+        type: String,
         price: String,
         color: String,
         size: String,
@@ -67,6 +70,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
             id = id,
             modelNumber = model,
             brandName = brand,
+            shoeType = type,
             shoePrice = price,
             shoeColor = color,
             shoeSize = size,

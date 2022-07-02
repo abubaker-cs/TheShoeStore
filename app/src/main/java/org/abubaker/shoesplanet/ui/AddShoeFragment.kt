@@ -100,6 +100,7 @@ class AddShoeFragment : Fragment() {
             viewModel.addShoe(
                 binding.shoeModelInput.text.toString(),
                 binding.tvShoeDesigner.text.toString(),
+                binding.tvShoeType.text.toString(),
                 binding.shoePriceInput.text.toString(),
                 binding.tvShoeColor.text.toString(),
                 binding.tvShoeSize.text.toString(),
@@ -121,6 +122,7 @@ class AddShoeFragment : Fragment() {
                 id = navigationArgs.id,
                 model = binding.shoeModelInput.text.toString(),
                 brand = binding.tvShoeDesigner.text.toString(),
+                type = binding.tvShoeType.text.toString(),
                 price = binding.shoePriceInput.text.toString(),
                 color = binding.tvShoeColor.text.toString(),
                 size = binding.tvShoeSize.text.toString(),
@@ -141,6 +143,7 @@ class AddShoeFragment : Fragment() {
         binding.apply {
             shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
             tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
+            tvShoeType.setText(shoe.shoeType, TextView.BufferType.SPANNABLE)
             shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
             tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
             tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
@@ -170,11 +173,11 @@ class AddShoeFragment : Fragment() {
 
     private fun bindDataWithExposedDropdownMenus() {
 
-        // Footwear
-//        val footwear = resources.getStringArray(R.array.shoe_footwear)
-//        val arrayAdapterFootwear =
-//            ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, footwear)
-//        binding.tvShoeFootwear.setAdapter(arrayAdapterFootwear)
+        // Shoe Type
+        val type = resources.getStringArray(R.array.shoe_type)
+        val arrayAdapterFootwear =
+            ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, type)
+        binding.tvShoeType.setAdapter(arrayAdapterFootwear)
 
         // Designer
         val designer = resources.getStringArray(R.array.shoe_designer)
