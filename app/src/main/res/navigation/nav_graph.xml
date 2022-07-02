@@ -95,6 +95,7 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment"
+            app:popUpToInclusive="false"
             />
     </fragment>
     <fragment
@@ -106,6 +107,8 @@
         <action
             android:id="@+id/action_splashFragment_to_signInFragment"
             app:destination="@id/signInFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
             />
     </fragment>
 
