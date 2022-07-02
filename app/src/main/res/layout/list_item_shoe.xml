@@ -40,19 +40,33 @@
                 android:layout_marginBottom="16dp"
                 >
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="0dp"
-                    android:layout_toEndOf="@id/shoe_brand"
                     android:gravity="end"
-                    android:hint="$$$"
-                    android:text="@{shoe.shoePrice}"
-                    android:textSize="18sp"
-                    />
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="10"
+                        android:text="@{shoe.shoePrice}"
+                        android:textSize="18sp"
+                        />
+
+                </LinearLayout>
+
 
                 <ImageView
                     android:id="@+id/thumbnail"
