@@ -18,10 +18,7 @@ class Signup : AppCompatActivity() {
 
         // Back to the SingIn Screen
         binding.btnBack.setOnClickListener {
-
-            val i = Intent(this@Signup, SignIn::class.java)
-            startActivity(i)
-
+            startActivity(Intent(this@Signup, SignIn::class.java))
         }
     }
 }

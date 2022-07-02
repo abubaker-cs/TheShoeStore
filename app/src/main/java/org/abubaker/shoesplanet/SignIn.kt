@@ -17,18 +17,12 @@ class SignIn : AppCompatActivity() {
 
         // SignUp: Create a new Account
         binding.btnCreateAccount.setOnClickListener {
-
-            val i = Intent(this@SignIn, Signup::class.java)
-            startActivity(i)
-
+            startActivity(Intent(this@SignIn, Signup::class.java))
         }
 
         // SignIn: Move to the Main page
         binding.btnSignIn.setOnClickListener {
-
-            val i = Intent(this@SignIn, MainActivity::class.java)
-            startActivity(i)
-
+            startActivity(Intent(this@SignIn, MainActivity::class.java))
         }
     }
 
