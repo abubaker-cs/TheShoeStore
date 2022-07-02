@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     >
 
     <data>
@@ -13,61 +12,127 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:paddingStart="16dp"-->
+    <!--            android:paddingEnd="16dp"-->
+    <!--            >-->
+
+
+    <!--            &lt;!&ndash;-->
+    <!--            android:text="@{shoe.model}"-->
+    <!--            &ndash;&gt;-->
+    <!--            <TextView-->
+    <!--                android:id="@+id/model"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="16dp"-->
+    <!--                android:hint="Shoe Name"-->
+    <!--                android:text="@{shoe.modelNumber}"-->
+    <!--                android:textAppearance="?attr/textAppearanceHeadline6"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/shoe_brand"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="@{shoe.brandName}"-->
+    <!--                android:textAppearance="?attr/textAppearanceBody2"-->
+    <!--                android:textSize="18sp"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/model"-->
+    <!--                tools:hint="Shoe Brand"-->
+    <!--                />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/shoe_price"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="@{shoe.shoePrice}"-->
+    <!--                android:textAppearance="?attr/textAppearanceBody2"-->
+    <!--                android:textSize="18sp"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/shoe_brand"-->
+    <!--                tools:hint="Unit Price"-->
+    <!--                />-->
+
+    <!--            <View-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="1dp"-->
+    <!--                android:layout_marginTop="16dp"-->
+    <!--                android:background="?attr/dividerHorizontal"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/shoe_price"-->
+    <!--                />-->
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="#ffff"
+        android:padding="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
         >
 
-
-        <!--
-        android:text="@{shoe.model}"
-        -->
-        <TextView
-            android:id="@+id/model"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Shoe Name"
-            android:text="@{shoe.modelNumber}"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-        <TextView
-            android:id="@+id/shoe_brand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{shoe.brandName}"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/model"
-            tools:hint="Shoe Brand"
-            />
-
-        <TextView
-            android:id="@+id/shoe_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{shoe.shoePrice}"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_brand"
-            tools:hint="Unit Price"
-            />
-
-        <View
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:background="?attr/dividerHorizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_price"
-            />
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            >
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/thumbnail"
+                android:contentDescription="Thumbnail"
+                />
+
+            <!-- Model -->
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/thumbnail"
+                android:hint="Model Number"
+                android:text="@{shoe.modelNumber}"
+                android:textColor="#1C1C1C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <!-- Brand -->
+            <TextView
+                android:id="@+id/shoe_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/model"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/thumbnail"
+                android:hint="Brand / Designer"
+                android:text="@{shoe.brandName}"
+                android:textColor="#707070"
+                />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </layout>
