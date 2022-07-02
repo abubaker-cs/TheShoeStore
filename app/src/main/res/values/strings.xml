@@ -16,4 +16,83 @@
     <string name="shoe_color_icon">Shoe Color Icon</string>
     <string name="in_stock">Currently in stock</string>
     <string name="out_of_stock">Currently out of stock</string>
+
+    <!-- Footwear Type-->
+    <string-array name="shoe_footwear">
+        <item>Boots</item>
+        <item>Exotics</item>
+        <item>Extra Large Shoes</item>
+        <item>Formal Shoes</item>
+        <item>Lace-Ups/Oxfords</item>
+        <item>Loafers and Drivers</item>
+        <item>Monkstraps</item>
+        <item>Sandals</item>
+        <item>Sneakers</item>
+        <item>Suede</item>
+    </string-array>
+
+    <!-- Brand Name -->
+    <string-array name="shoe_designer">
+        <item>Bacco Bucci</item>
+        <item>C &amp; E Label</item>
+        <item>Carrucci</item>
+        <item>Coly</item>
+        <item>Corrente</item>
+        <item>Dogen</item>
+        <item>Frye</item>
+        <item>Goodoo Sneakers</item>
+        <item>Jean Pierre</item>
+        <item>Johnston &amp; Murphy</item>
+        <item>Maurice</item>
+        <item>Mezlan</item>
+        <item>Pelle Exotics</item>
+        <item>Toscana</item>
+        <item>Ugo Vasare</item>
+    </string-array>
+
+    <!-- Color -->
+    <string-array name="shoe_colors">
+        <item>Black</item>
+        <item>Blue</item>
+        <item>Brandy</item>
+        <item>Brown</item>
+        <item>Burgundy</item>
+        <item>Camel</item>
+        <item>Cognac</item>
+        <item>Dark Brown</item>
+        <item>Green</item>
+        <item>Grey</item>
+        <item>Jeans</item>
+        <item>Mahogany</item>
+        <item>Navy</item>
+        <item>Sport-Rust</item>
+        <item>Sport</item>
+        <item>Tabaco</item>
+        <item>Tan</item>
+        <item>Taupe</item>
+        <item>White/Camel</item>
+    </string-array>
+
+    <!-- MEN'S SHOE - EUROPEAN SIZES -->
+    <!--
+    https://www.candefashions.com/about/shoe-size-conversion-chart/
+    -->
+    <string-array name="shoe_size">
+        <item>40</item>
+        <item>40.5</item>
+        <item>41</item>
+        <item>41.5</item>
+        <item>42</item>
+        <item>42.5</item>
+        <item>43</item>
+        <item>43.5</item>
+        <item>44</item>
+        <item>44.5</item>
+        <item>45</item>
+        <item>45.5</item>
+        <item>46</item>
+        <item>46.5</item>
+        <item>47</item>
+        <item>47.5</item>
+    </string-array>
 </resources>

@@ -4,10 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <data>
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/brand_icon"
-            android:src="@drawable/ic_brand_24"
+            android:src="@drawable/ic_designer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/shoe_model"
             />
@@ -68,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/price_icon"
-            android:src="@drawable/ic_price_24"
+            android:src="@drawable/ic_price"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_brand_name"
             />
@@ -102,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/shoe_color_icon"
-            android:src="@drawable/ic_color_24"
+            android:src="@drawable/ic_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_shoe_price"
             />
@@ -136,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/shoe_color_icon"
-            android:src="@drawable/ic_size_24"
+            android:src="@drawable/ic_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_shoe_color"
             />
@@ -170,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/shoe_color_icon"
-            android:src="@drawable/ic_in_stock_24"
+            android:src="@drawable/ic_in_stock"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_shoe_size"
             />
@@ -204,7 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:contentDescription="@string/shoe_color_icon"
-            android:src="@drawable/ic_notes_24"
+            android:src="@drawable/ic_notes"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_in_stock"
             />
