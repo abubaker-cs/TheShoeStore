@@ -72,6 +72,7 @@ class ShoeDetailsFragment : Fragment() {
     private fun bindShoe(shoe: Shoe) {
 
         binding.apply {
+            shoeModel.text = shoe.modelNumber
             brandName.text = shoe.brandName
             shoePrice.text = shoe.shoePrice
             shoeType.text = shoe.shoeType

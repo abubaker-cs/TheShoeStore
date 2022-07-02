@@ -19,7 +19,7 @@
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Shoe Model"
+            tools:hint="Shoe Model"
             />
 
         <!-- Brand Name -->
