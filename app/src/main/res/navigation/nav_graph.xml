@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/shoeListFragment"
+    app:startDestination="@id/loginFragment"
     >
 
     <!-- Fragment: List -->
@@ -70,6 +70,17 @@
             app:destination="@id/shoeListFragment"
             />
 
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="org.abubaker.shoesplanet.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_signin"
+        >
+        <action
+            android:id="@+id/action_loginFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            />
     </fragment>
 
 </navigation>

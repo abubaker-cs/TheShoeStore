@@ -18,7 +18,7 @@
         >
 
         <activity
-            android:name=".Splash"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.ShoesPlanet.NoActionBar"
             >
@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Splash"
             android:exported="false"
             />
 
