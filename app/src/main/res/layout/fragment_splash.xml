@@ -8,13 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_splash"
-        tools:context=".Splash"
+        tools:context=".SplashFragment"
         >
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:contentDescription="App Logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -29,11 +29,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".Splash"
-            android:exported="false"
-            />
-
     </application>
 
 </manifest>
