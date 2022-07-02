@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Signup"
+        tools:context=".SignUpFragment"
         >
 
         <RelativeLayout
@@ -17,7 +17,7 @@
             >
 
             <ImageView
-                android:id="@+id/btnBack"
+                android:id="@+id/btn_back"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginLeft="25dp"
@@ -91,6 +91,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sign_up"
             android:layout_width="285dp"
             android:layout_height="55dp"
             android:layout_gravity="center"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment"
+    app:startDestination="@id/signInFragment"
     >
 
     <!-- Fragment: List -->
@@ -72,14 +72,29 @@
 
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="org.abubaker.shoesplanet.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_signin"
+        android:id="@+id/signInFragment"
+        android:name="org.abubaker.shoesplanet.SignInFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_sign_in"
         >
         <action
             android:id="@+id/action_loginFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
+            />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="org.abubaker.shoesplanet.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up"
+        >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
             />
     </fragment>
 

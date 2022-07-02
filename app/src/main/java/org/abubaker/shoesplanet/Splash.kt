@@ -1,6 +1,5 @@
 package org.abubaker.shoesplanet
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +22,7 @@ class Splash : AppCompatActivity() {
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 } finally {
-                    startActivity(Intent(this@Splash, SignIn::class.java))
+                    // startActivity(Intent(this@Splash, SignIn::class.java))
                 }
             }
         }

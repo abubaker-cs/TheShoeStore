@@ -34,15 +34,6 @@
             android:exported="false"
             />
 
-        <activity
-            android:name=".Signup"
-            android:exported="false"
-            />
-        <activity
-            android:name=".SignIn"
-            android:exported="false"
-            />
-
     </application>
 
 </manifest>
