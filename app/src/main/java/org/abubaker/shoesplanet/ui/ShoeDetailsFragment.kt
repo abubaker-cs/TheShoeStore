@@ -74,6 +74,7 @@ class ShoeDetailsFragment : Fragment() {
         binding.apply {
             brandName.text = shoe.brandName
             shoePrice.text = shoe.shoePrice
+            shoeType.text = shoe.shoeType
             shoeColor.text = shoe.shoeColor
             shoeSize.text = shoe.shoeSize
             inStock.text = shoe.inStock.toString()
