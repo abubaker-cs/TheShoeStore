@@ -1,4 +1,4 @@
-package org.abubaker.shoesplanet
+package org.abubaker.shoesplanet.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,35 +6,37 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import org.abubaker.shoesplanet.databinding.FragmentSignUpBinding
+import org.abubaker.shoesplanet.R
+import org.abubaker.shoesplanet.databinding.FragmentSignInBinding
 
 
-class SignUpFragment : Fragment() {
+class SignInFragment : Fragment() {
 
-    private var _binding: FragmentSignUpBinding? = null
+
+    private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnBack.setOnClickListener {
+        binding.btnSignIn.setOnClickListener {
             findNavController().navigate(
-                R.id.action_signUpFragment_to_signInFragment
+                R.id.action_loginFragment_to_shoeListFragment
             )
         }
 
-        binding.btnSignUp.setOnClickListener {
+        binding.btnCreateAccount.setOnClickListener {
             findNavController().navigate(
-                R.id.action_signUpFragment_to_signInFragment
+                R.id.action_signInFragment_to_signUpFragment
             )
         }
 

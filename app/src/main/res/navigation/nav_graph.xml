@@ -73,8 +73,8 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="org.abubaker.shoesplanet.SignInFragment"
-        android:label="fragment_signin"
+        android:name="org.abubaker.shoesplanet.onboarding.SignInFragment"
+        android:label="Sign in"
         tools:layout="@layout/fragment_sign_in"
         >
         <action
@@ -88,8 +88,8 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="org.abubaker.shoesplanet.SignUpFragment"
-        android:label="fragment_sign_up"
+        android:name="org.abubaker.shoesplanet.onboarding.SignUpFragment"
+        android:label="Sign up"
         tools:layout="@layout/fragment_sign_up"
         >
         <action
@@ -99,8 +99,8 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="org.abubaker.shoesplanet.SplashFragment"
-        android:label="fragment_splash"
+        android:name="org.abubaker.shoesplanet.onboarding.SplashFragment"
+        android:label="Shoes Planet v1.0"
         tools:layout="@layout/fragment_splash"
         >
         <action

@@ -1,4 +1,4 @@
-package org.abubaker.shoesplanet
+package org.abubaker.shoesplanet.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.abubaker.shoesplanet.R
 import org.abubaker.shoesplanet.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {
@@ -30,6 +31,8 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         activityScope.launch {
             delay(1500)
