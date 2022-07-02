@@ -147,7 +147,7 @@ class AddShoeFragment : Fragment() {
             inStockCheckbox.isChecked = shoe.inStock
             notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
 
-            bindDataWithDropdownMenus()
+            bindDataWithExposedDropdownMenus()
 
             saveBtn.setOnClickListener {
                 updateShoe()
@@ -157,10 +157,10 @@ class AddShoeFragment : Fragment() {
 
     }
 
+    // Safeguard
     override fun onResume() {
         super.onResume()
-        bindDataWithDropdownMenus()
-
+        bindDataWithExposedDropdownMenus()
     }
 
     private fun isValidEntry() = viewModel.isValidEntry(
@@ -168,7 +168,7 @@ class AddShoeFragment : Fragment() {
         binding.shoeModelInput.text.toString()
     )
 
-    private fun bindDataWithDropdownMenus() {
+    private fun bindDataWithExposedDropdownMenus() {
 
         // Footwear
 //        val footwear = resources.getStringArray(R.array.shoe_footwear)
