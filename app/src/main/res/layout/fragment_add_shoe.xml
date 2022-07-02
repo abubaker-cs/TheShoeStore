@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="Shoe Designer"
+                    android:hint="Shoe Brand / Designer"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +100,35 @@
                         android:paddingTop="16dp"
                         android:paddingBottom="16dp"
                         android:text="Jean Pierre"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Color -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_color"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_designer"
+                    app:startIconDrawable="@drawable/ic_color"
+                    >
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Black"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -126,55 +155,78 @@
 
                 <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <!-- Price -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/shoe_price_label"
+
+                <!--
+
+                    2 Columns
+
+                 -->
+                <LinearLayout
+                    android:id="@+id/ll_size_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="Price"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/shoe_designer"
-                    >
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/shoe_price_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="number"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <!-- Color -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/shoe_color"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="Color"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_price_label"
-                    app:startIconDrawable="@drawable/ic_color"
+                    app:layout_constraintTop_toBottomOf="@id/shoe_price_label"
                     >
 
-
-                    <AutoCompleteTextView
-                        android:id="@+id/tv_shoe_color"
-                        android:layout_width="match_parent"
+                    <!-- Shoe Size -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/shoe_size"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:inputType="none"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:text="Black"
-                        />
+                        android:hint="Size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shoe_color"
+                        app:startIconDrawable="@drawable/ic_size"
+                        >
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <AutoCompleteTextView
+                            android:id="@+id/tv_shoe_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:text="40"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Price -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/shoe_price_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:hint="Price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shoe_designer"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/shoe_price_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
                 <!--                <com.google.android.material.textfield.TextInputLayout-->
                 <!--                    android:id="@+id/shoe_color_label"-->
                 <!--                    android:layout_width="match_parent"-->
@@ -195,34 +247,6 @@
 
                 <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <!-- Shoe Size -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/shoe_size"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="Size"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_color"
-                    app:startIconDrawable="@drawable/ic_size"
-                    >
-
-
-                    <AutoCompleteTextView
-                        android:id="@+id/tv_shoe_size"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:inputType="none"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:text="40"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Size -->
                 <!--                <com.google.android.material.textfield.TextInputLayout-->
@@ -246,26 +270,16 @@
                 <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
 
-                <!-- In Stock? -->
-                <com.google.android.material.checkbox.MaterialCheckBox
-                    android:id="@+id/in_stock_checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="In Stock"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/shoe_size"
-                    />
-
                 <!-- Notes -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/shoe_notes_label"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="Notes"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/in_stock_checkbox"
+                    app:layout_constraintTop_toBottomOf="@id/ll_size_price"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -278,16 +292,28 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- In Stock? -->
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/in_stock_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="In Stock"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shoe_notes_label"
+                    />
+
                 <!-- Group: Action Buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/shoe_notes_label"
+                    app:layout_constraintTop_toBottomOf="@id/in_stock_checkbox"
                     >
 
                     <!-- Button: Save -->
