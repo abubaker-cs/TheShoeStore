@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -58,6 +59,7 @@ class AddShoeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val id = navigationArgs.id
         if (id > 0) {
 
@@ -67,7 +69,6 @@ class AddShoeFragment : Fragment() {
             viewModel.getShoe(id).observe(this.viewLifecycleOwner) { selectedShoe ->
 
                 shoe = selectedShoe
-
                 bindShoe(shoe)
 
             }
@@ -98,10 +99,10 @@ class AddShoeFragment : Fragment() {
 
             viewModel.addShoe(
                 binding.shoeModelInput.text.toString(),
-                binding.brandNameInput.text.toString(),
+                binding.tvShoeDesigner.text.toString(),
                 binding.shoePriceInput.text.toString(),
-                binding.shoeColorInput.text.toString(),
-                binding.shoeSizeInput.text.toString(),
+                binding.tvShoeColor.text.toString(),
+                binding.tvShoeSize.text.toString(),
                 binding.inStockCheckbox.isChecked,
                 binding.notesInput.text.toString()
             )
@@ -119,10 +120,10 @@ class AddShoeFragment : Fragment() {
             viewModel.updateShoe(
                 id = navigationArgs.id,
                 model = binding.shoeModelInput.text.toString(),
-                brand = binding.brandNameInput.text.toString(),
+                brand = binding.tvShoeDesigner.text.toString(),
                 price = binding.shoePriceInput.text.toString(),
-                color = binding.shoeColorInput.text.toString(),
-                size = binding.shoeSizeInput.text.toString(),
+                color = binding.tvShoeColor.text.toString(),
+                size = binding.tvShoeSize.text.toString(),
                 inStock = binding.inStockCheckbox.isChecked,
                 notes = binding.notesInput.text.toString()
             )
@@ -133,29 +134,64 @@ class AddShoeFragment : Fragment() {
         }
     }
 
+    /**
+     * TODO
+     */
     private fun bindShoe(shoe: Shoe) {
         binding.apply {
             shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
-            brandNameInput.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
+            tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
             shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
-            shoeColorInput.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
-            shoeSizeInput.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
+            tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
+            tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
             inStockCheckbox.isChecked = shoe.inStock
             notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
+
+            bindDataWithDropdownMenus()
 
             saveBtn.setOnClickListener {
                 updateShoe()
             }
 
-
         }
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        bindDataWithDropdownMenus()
+
+    }
+
     private fun isValidEntry() = viewModel.isValidEntry(
-        binding.brandNameInput.text.toString(),
+        binding.tvShoeDesigner.text.toString(),
         binding.shoeModelInput.text.toString()
     )
+
+    private fun bindDataWithDropdownMenus() {
+
+        // Footwear
+//        val footwear = resources.getStringArray(R.array.shoe_footwear)
+//        val arrayAdapterFootwear =
+//            ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, footwear)
+//        binding.tvShoeFootwear.setAdapter(arrayAdapterFootwear)
+
+        // Designer
+        val designer = resources.getStringArray(R.array.shoe_designer)
+        val arrayAdapterDesigner =
+            ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, designer)
+        binding.tvShoeDesigner.setAdapter(arrayAdapterDesigner)
+
+        // Color
+        val color = resources.getStringArray(R.array.shoe_colors)
+        val arrayAdapterColor = ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, color)
+        binding.tvShoeColor.setAdapter(arrayAdapterColor)
+
+        // Size
+        val size = resources.getStringArray(R.array.shoe_size)
+        val arrayAdapterSize = ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, size)
+        binding.tvShoeSize.setAdapter(arrayAdapterSize)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

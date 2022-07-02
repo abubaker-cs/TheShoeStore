@@ -8,181 +8,314 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:padding="16dp"
         tools:context=".ui.AddShoeFragment"
         >
 
-        <!-- Shoe Model -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoe_model_label"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Shoe Model"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/shoe_model_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textAutoComplete"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Shoe Brand -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/brand_name_label"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Brand Name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_model_label"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/brand_name_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textAutoComplete"
-                android:singleLine="true"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Price -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoe_price_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Price"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/brand_name_label"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/shoe_price_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="number"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <!-- Color -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoe_color_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Color"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_price_label"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/shoe_color_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textAutoComplete"
-                android:singleLine="true"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Size -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoe_size_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Size"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_color_label"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/shoe_size_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textAutoComplete"
-                android:singleLine="true"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <!-- In Stock? -->
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/in_stock_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="In Stock"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_size_label"
-            />
-
-        <!-- Notes -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoe_notes_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Notes"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/in_stock_checkbox"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/notes_input"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:maxLines="4"
-                />
+                android:orientation="vertical"
+                >
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <!-- Footwear Type -->
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/shoe_footwear"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:hint="Footwear Type"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintHorizontal_bias="0.5"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent"-->
+                <!--                    app:startIconDrawable="@drawable/ic_footwear"-->
+                <!--                    >-->
 
-        <!-- Group: Action Buttons -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_notes_label"
-            >
 
-            <!-- Button: Save -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/save_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="@string/fab_save"
-                />
+                <!--                    <AutoCompleteTextView-->
+                <!--                        android:id="@+id/tv_shoe_footwear"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:inputType="none"-->
+                <!--                        android:paddingTop="16dp"-->
+                <!--                        android:paddingBottom="16dp"-->
+                <!--                        android:text="Lace-Ups/Oxfords"-->
+                <!--                        />-->
 
-            <!-- Button: Delete -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/delete_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/fab_delete"
-                android:visibility="gone"
-                />
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-        </LinearLayout>
+                <!-- Shoe Model -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_model_label"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Shoe Model"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shoe_model_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textAutoComplete"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Shoe Designer -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_designer"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Shoe Designer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_model_label"
+                    app:startIconDrawable="@drawable/ic_designer"
+                    >
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_designer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Jean Pierre"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Shoe Brand -->
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/brand_name_label"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:hint="Brand Name"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/shoe_model_label"-->
+                <!--                    >-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/brand_name_input"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:inputType="textAutoComplete"-->
+                <!--                        android:singleLine="true"-->
+                <!--                        />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!-- Price -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_price_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shoe_designer"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shoe_price_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Color -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_color"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_price_label"
+                    app:startIconDrawable="@drawable/ic_color"
+                    >
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="Black"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/shoe_color_label"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:hint="Color"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/shoe_price_label"-->
+                <!--                    >-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/shoe_color_input"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:inputType="textAutoComplete"-->
+                <!--                        android:singleLine="true"-->
+                <!--                        />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!-- Shoe Size -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_size"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_color"
+                    app:startIconDrawable="@drawable/ic_size"
+                    >
+
+
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="40"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Size -->
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/shoe_size_label"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="16dp"-->
+                <!--                    android:hint="Size"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/shoe_color"-->
+                <!--                    >-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/shoe_size_input"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:inputType="textAutoComplete"-->
+                <!--                        android:singleLine="true"-->
+                <!--                        />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+
+                <!-- In Stock? -->
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/in_stock_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="In Stock"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shoe_size"
+                    />
+
+                <!-- Notes -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_notes_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Notes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/in_stock_checkbox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/notes_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="4"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Group: Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shoe_notes_label"
+                    >
+
+                    <!-- Button: Save -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/fab_save"
+                        />
+
+                    <!-- Button: Delete -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/delete_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/fab_delete"
+                        android:visibility="gone"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
