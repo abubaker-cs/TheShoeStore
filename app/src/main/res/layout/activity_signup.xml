@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Signup"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/ic_back"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Create an account"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                />
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_user"
+            />
+
+        <!-- Edit fields -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_input"
+                android:hint="Name"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                />
+
+            <EditText
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                />
+
+
+            <EditText
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="285dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/bg_btn"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+</layout>

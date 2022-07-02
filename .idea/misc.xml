@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/bg_btn.xml" value="0.2725" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/bg_input.xml" value="0.2725" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_add_shoe.xml" value="0.21" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_back.xml" value="0.2725" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_brand.xml" value="0.21" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_brand_24.xml" value="0.21" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_color.xml" value="0.21" />
@@ -14,7 +17,12 @@
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_notes_24.xml" value="0.21" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_price_24.xml" value="0.21" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_size_24.xml" value="0.21" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/drawable/ic_user.xml" value="0.2725" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/activity_login.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/activity_main.xml" value="0.28958333333333336" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/activity_signin.xml" value="0.14537037037037037" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/activity_signup.xml" value="0.28958333333333336" />
+        <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/activity_splash.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/content_main.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/dropdown_menu_item.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/moham/AndroidStudioProjects/UI/ShoesPlanet/app/src/main/res/layout/fragment_add_shoe.xml" value="0.28958333333333336" />

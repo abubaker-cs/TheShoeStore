@@ -71,16 +71,5 @@
             />
 
     </fragment>
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="org.abubaker.shoesplanet.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash"
-        >
-        <action
-            android:id="@+id/action_splashFragment_to_shoeListFragment"
-            app:destination="@id/shoeListFragment"
-            />
-    </fragment>
 
 </navigation>
