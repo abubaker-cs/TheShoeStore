@@ -22,9 +22,13 @@ data class Shoe(
     @ColumnInfo(name = "model_number")
     val modelNumber: String,
 
-    // Brand
+    // Brand / Designer
     @NonNull @ColumnInfo(name = "brand_name")
     val brandName: String,
+
+    // Footwear
+    @NonNull @ColumnInfo(name = "shoe_type")
+    val shoeType: String,
 
     // Price
     @NonNull @ColumnInfo(name = "shoe_price")
