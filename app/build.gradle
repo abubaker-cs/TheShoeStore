@@ -80,6 +80,9 @@ dependencies {
     // Used with ViewPager2
     implementation 'com.tbuonomo:dotsindicator:4.2'
 
+    // Dot Indicator
+    implementation 'com.tbuonomo:dotsindicator:4.2'
+
     // Progress bar
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 

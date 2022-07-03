@@ -59,7 +59,7 @@ class SplashFragment : Fragment() {
             delay(2550)
 
             findNavController().navigate(
-                R.id.action_splashFragment_to_signInFragment
+                R.id.action_splashFragment_to_onboardingFragment
             )
 
         }
