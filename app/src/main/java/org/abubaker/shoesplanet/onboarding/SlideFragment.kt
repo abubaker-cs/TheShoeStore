@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import org.abubaker.shoesplanet.R
 import org.abubaker.shoesplanet.data.SlidesRecord
 import org.abubaker.shoesplanet.databinding.FragmentOnboardingBinding
 import org.abubaker.shoesplanet.ui.adapter.SlideAdapter
@@ -23,6 +24,10 @@ class SlideFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentOnboardingBinding.inflate(inflater, container, false)
+
+        // Bind the viewpager
+        setupViewPager(binding)
+
         return binding.root
     }
 
@@ -37,12 +42,9 @@ class SlideFragment : Fragment() {
 
                 binding.controllerBtn.setOnClickListener {
 
-                    // Toast Message
-                    Toast.makeText(
-                        context,
-                        "Slideshow completed",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    findNavController().navigate(
+                        R.id.action_onboardingFragment_to_signInFragment
+                    )
 
                 }
 
