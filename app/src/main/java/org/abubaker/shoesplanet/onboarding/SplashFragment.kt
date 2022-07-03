@@ -39,7 +39,7 @@ class SplashFragment : Fragment() {
             // Set Progress
             progress = 0f
 
-            // Set Progress Max
+            // Set Progress Max.
             progressMax = 100f
             setProgressWithAnimation(100f, 2500)
             progressBarWidth = 20f
