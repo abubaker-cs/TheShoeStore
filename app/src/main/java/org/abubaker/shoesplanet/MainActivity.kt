@@ -46,6 +46,11 @@ class MainActivity : AppCompatActivity() {
                     binding.toolbar.visibility = View.GONE
                 }
 
+                R.id.onboardingFragment -> {
+                    supportActionBar?.hide()
+                    binding.toolbar.visibility = View.GONE
+                }
+
                 R.id.signInFragment -> {
                     supportActionBar?.hide()
                     binding.toolbar.visibility = View.GONE

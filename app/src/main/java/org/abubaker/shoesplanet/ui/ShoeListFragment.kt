@@ -14,6 +14,7 @@ import org.abubaker.shoesplanet.ui.adapter.ShoeListAdapter
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
 
+
 /**
  * FILE 07
  *
@@ -93,8 +94,6 @@ class ShoeListFragment : Fragment() {
 
         }
 
-
-
         binding.apply {
 
             recyclerView.adapter = adapter
@@ -109,6 +108,5 @@ class ShoeListFragment : Fragment() {
 
         }
     }
-
 
 }
