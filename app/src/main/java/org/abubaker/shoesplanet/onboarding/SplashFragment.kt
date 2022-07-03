@@ -42,8 +42,8 @@ class SplashFragment : Fragment() {
             // Set Progress Max
             progressMax = 100f
             setProgressWithAnimation(100f, 2500)
-            progressBarWidth = 15f
-            backgroundProgressBarWidth = 16f
+            progressBarWidth = 20f
+            backgroundProgressBarWidth = 15f
             // progressBarColor = Color.GREEN
             progressBarColorStart = Color.GREEN
             progressBarColorEnd = Color.BLUE
