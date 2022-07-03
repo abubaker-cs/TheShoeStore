@@ -67,12 +67,32 @@ class ShoeListFragment : Fragment() {
         // Observe the list of shoes from the viewModel and submit it the adapter
         viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
 
-            shoes.let {
-                adapter.submitList(it)
+            if (shoes.isEmpty()) {
+
+                // Display "No records found" view
+                binding.apply {
+                    recyclerView.visibility = View.GONE
+                    emptyView.visibility = View.VISIBLE
+                }
+
+            } else {
+
+                // Prepare the UI to display RecyclerView
+                binding.apply {
+                    recyclerView.visibility = View.VISIBLE
+                    emptyView.visibility = View.GONE
+                }
+
+                // Populate the recyclerview with the records.
+                shoes.let {
+                    adapter.submitList(it)
+                }
+
             }
 
 
         }
+
 
 
         binding.apply {

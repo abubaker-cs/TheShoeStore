@@ -21,6 +21,16 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
+        <!-- Displays when no record is present -->
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="No data available"
+            android:visibility="gone"
+            />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_shoe_fab"
             android:layout_width="wrap_content"
