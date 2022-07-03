@@ -35,7 +35,7 @@ class SplashFragment : Fragment() {
 
 
         activityScope.launch {
-            delay(1500)
+            delay(3000)
 
             findNavController().navigate(
                 R.id.action_splashFragment_to_signInFragment

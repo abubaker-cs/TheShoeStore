@@ -2,25 +2,26 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg_splash"
+        android:background="@drawable/splash_bg"
         tools:context=".onboarding.SplashFragment"
         >
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="200dp"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:contentDescription="App Logo"
+            android:layout_marginBottom="120dp"
+            android:contentDescription="Loading progress"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo"
+            app:srcCompat="@drawable/loading"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
