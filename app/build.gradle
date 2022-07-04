@@ -62,9 +62,6 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     androidTestImplementation "androidx.room:room-testing:$room_version"
 
-
-
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 

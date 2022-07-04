@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -31,8 +32,11 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 
         val navController = navHostFragment.navController
+        // appBarConfiguration = AppBarConfiguration(navController.graph)
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        // This will allow us to hide the < Back button from the shoe_list_fragment
+        // Reference: https://developer.android.com/guide/navigation/navigation-ui#appbarconfiguration
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.shoeListFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         /**
@@ -72,9 +76,43 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
+        // Inflate the XML layout: res/menu/main_menu.xml
         menuInflater.inflate(R.menu.main_menu, menu)
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val menuItem = toolbar.menu.findItem(R.id.action_logout)
+
+
+        /**
+         * This code will only show the logout button on the shoeListFragment
+         */
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+
+            when (destination.id) {
+
+                R.id.shoeListFragment -> {
+                    menuItem.isVisible = true
+                }
+
+                else -> {
+                    menuItem.isVisible = false
+                }
+
+            }
+        }
+
+
+
+
         return true
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
