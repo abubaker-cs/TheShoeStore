@@ -20,7 +20,8 @@
                 android:id="@+id/btn_back"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:layout_marginLeft="25dp"
+                android:layout_marginStart="25dp"
+                android:contentDescription="@string/back_icon_signup"
                 android:src="@drawable/ic_back"
                 />
 
@@ -28,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Create an account"
+                android:text="@string/create_account"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -43,6 +44,7 @@
             android:layout_height="105dp"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
+            android:contentDescription="@string/user_avatar"
             android:src="@drawable/ic_user"
             />
 
@@ -58,8 +60,9 @@
             <EditText
                 android:layout_width="285dp"
                 android:layout_height="50dp"
+                android:autofillHints="name"
                 android:background="@drawable/bg_input"
-                android:hint="Name"
+                android:hint="@string/username"
                 android:inputType="text"
                 android:padding="15dp"
                 android:textColor="@color/black"
@@ -69,8 +72,9 @@
                 android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
+                android:autofillHints="emailAddress"
                 android:background="@drawable/bg_input"
-                android:hint="Email Address"
+                android:hint="@string/email_address"
                 android:inputType="textEmailAddress"
                 android:padding="15dp"
                 android:textColor="@color/black"
@@ -81,8 +85,9 @@
                 android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
+                android:autofillHints="password"
                 android:background="@drawable/bg_input"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="15dp"
                 android:textColor="@color/black"
@@ -97,7 +102,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="35dp"
             android:background="@drawable/bg_btn"
-            android:text="Sign Up"
+            android:text="@string/sign_up_btn"
             android:textColor="@color/white"
             android:textSize="16sp"
             />
