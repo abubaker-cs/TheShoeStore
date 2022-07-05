@@ -14,11 +14,11 @@ import org.abubaker.shoesplanet.data.ShoeDatabase
 // We will instantiate the database instance in the Application class
 class BaseApplication : Application() {
 
-    // Use lazy delegate so the instance database is lazily created when you first need/access the
-    // reference (rather than when the app starts) .
+    // I am using lazy delegate so the instance database is lazily created whenever access is needed
+    // to the database (rather than when the app starts) .
     val database: ShoeDatabase by lazy {
 
-        //  Instantiate the database instance by calling getDatabase() on ShoeDatabase passing in the context
+        // Calling the getDatabase() while passing in the context will instantiate the database.
         ShoeDatabase.getDatabase(this)
 
     }
