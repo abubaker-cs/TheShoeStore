@@ -18,6 +18,8 @@
     <string name="out_of_stock">Currently out of stock</string>
     <string name="welcome">Welcome Back</string>
     <string name="sign_in">Sign in to continue</string>
+    <string name="detail_image_desc">image</string>
+    <string name="fav_btn_desc">image</string>
 
     <!-- Footwear Type-->
     <string-array name="shoe_type">
