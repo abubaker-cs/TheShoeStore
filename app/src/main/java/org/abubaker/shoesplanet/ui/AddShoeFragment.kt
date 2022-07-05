@@ -19,12 +19,6 @@ import org.abubaker.shoesplanet.model.Shoe
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AddShoeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddShoeFragment : Fragment() {
 
     private val navigationArgs: AddShoeFragmentArgs by navArgs()
@@ -68,18 +62,19 @@ class AddShoeFragment : Fragment() {
         // We are checking if the ID already exists in the Database
         if (id > 0) {
 
-            // TO DO: Observe a Shoe that is retrieved by id, set the shoes variable,
-            //  and call the bindShoe method
-
-            //
+            // This is an observer method, we will use it to pass the user's provided data and start
+            // the storage process.
             viewModel.getShoe(id).observe(this.viewLifecycleOwner) { selectedShoe ->
 
+                // Store the user provide data in the shoe variable
                 shoe = selectedShoe
+
+                // Pass in the user's provided data, and initialize the bindShoe() function
                 bindShoe(shoe)
 
             }
 
-            // This will be helpful to let the user DELETE existing entry.
+            // This will be helpful to let the user DELETE existing record, (in the Edit Mode)
             binding.deleteBtn.visibility = View.VISIBLE
             binding.deleteBtn.setOnClickListener {
                 deleteShoe(shoe)
@@ -88,6 +83,7 @@ class AddShoeFragment : Fragment() {
         } else {
 
             //  Button: Save
+            //  The save button will be only shown if the entry ID has not been found in the previous records.
             binding.saveBtn.setOnClickListener {
 
                 // Save the new entry
@@ -120,14 +116,31 @@ class AddShoeFragment : Fragment() {
         if (isValidEntry()) {
 
             viewModel.addShoe(
+
+                // Shoe Model
                 binding.shoeModelInput.text.toString(),
+
+                // Brand / Designer
                 binding.tvShoeDesigner.text.toString(),
+
+                // Shoe Type
                 binding.tvShoeType.text.toString(),
+
+                // Price
                 binding.shoePriceInput.text.toString(),
+
+                // Color
                 binding.tvShoeColor.text.toString(),
+
+                // Shoe Size
                 binding.tvShoeSize.text.toString(),
+
+                // Shoe Availability
                 binding.inStockCheckbox.isChecked,
+
+                // Notes
                 binding.notesInput.text.toString()
+
             )
 
             // After completing the addShoe() function, navigate the user back to the List Fragment.
@@ -189,13 +202,29 @@ class AddShoeFragment : Fragment() {
      */
     private fun bindShoe(shoe: Shoe) {
         binding.apply {
+
+            // Shoe Model
             shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
+
+            //
             tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
+
+            //
             tvShoeType.setText(shoe.shoeType, TextView.BufferType.SPANNABLE)
+
+            //
             shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
+
+            //
             tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
+
+            //
             tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
+
+            //
             inStockCheckbox.isChecked = shoe.inStock
+
+            //
             notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
 
             bindDataWithExposedDropdownMenus()
@@ -214,6 +243,7 @@ class AddShoeFragment : Fragment() {
         bindDataWithExposedDropdownMenus()
     }
 
+    // TODO - add more fields for validation
     private fun isValidEntry() = viewModel.isValidEntry(
         binding.tvShoeDesigner.text.toString(),
         binding.shoeModelInput.text.toString()
