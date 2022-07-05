@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Shoes Planet</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="list_fragment_title">List of Shoes</string>
     <string name="details_fragment_title">Shoe Details</string>
     <string name="add_fragment_title">Add New Shoe</string>
