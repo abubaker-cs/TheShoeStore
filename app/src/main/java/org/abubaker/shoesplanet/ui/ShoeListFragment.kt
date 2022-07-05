@@ -39,14 +39,14 @@ class ShoeListFragment : Fragment() {
     }
 
     /**
-     * Inflate XML Layout: @layout/fragment_shoe_list.xml
+     * Inflate XML Layout
      */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        // Inflate the layout for this fragment
+        // Inflate: @layout/fragment_shoe_list.xml
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         return binding.root
 

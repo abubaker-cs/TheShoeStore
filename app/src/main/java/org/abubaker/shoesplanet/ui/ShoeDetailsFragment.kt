@@ -28,6 +28,8 @@ class ShoeDetailsFragment : Fragment() {
     // TO DO: Refactor the creation of the view model to take an instance of
     //  shoeViewModelFactory. The factory should take an instance of the Database retrieved
     //  from BaseApplication
+
+    //
     private val viewModel: ShoeViewModel by activityViewModels {
         ShoeViewModelFactory(
             (activity?.application as BaseApplication).database.shoeDao()

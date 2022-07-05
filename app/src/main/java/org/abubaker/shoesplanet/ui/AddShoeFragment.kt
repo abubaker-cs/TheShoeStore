@@ -33,29 +33,28 @@ class AddShoeFragment : Fragment() {
 
     private lateinit var shoe: Shoe
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
 
-    // TO DO: Refactor the creation of the view model to take an instance of
-    //  ShoeViewModelFactory. The factory should take an instance of the Database retrieved
-    //  from BaseApplication
+    // Get reference to our viewModel i.e. ShoeViewModel
     private val viewModel: ShoeViewModel by activityViewModels {
 
+        // The ShoeViewModelFactory will take an instance of the Database retrieved from BaseApplication
         ShoeViewModelFactory(
             (activity?.application as BaseApplication).database.shoeDao()
         )
 
     }
 
+    /**
+     * Inflate XML Layout
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_add_shoe, container, false)
-        // Inflate the layout for this fragment
-        // _binding = FragmentAddShoeBinding.inflate(inflater, container, false)
+    ): View {
+
+        // Inflate: @layout/fragment_add_shoe.xml
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_shoe, container, false)
         return binding.root
     }
@@ -63,12 +62,16 @@ class AddShoeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Get the ID of the Entry Item
         val id = navigationArgs.id
+
+        // We are checking if the ID already exists in the Database
         if (id > 0) {
 
             // TO DO: Observe a Shoe that is retrieved by id, set the shoes variable,
             //  and call the bindShoe method
 
+            //
             viewModel.getShoe(id).observe(this.viewLifecycleOwner) { selectedShoe ->
 
                 shoe = selectedShoe
@@ -76,27 +79,43 @@ class AddShoeFragment : Fragment() {
 
             }
 
+            // This will be helpful to let the user DELETE existing entry.
             binding.deleteBtn.visibility = View.VISIBLE
             binding.deleteBtn.setOnClickListener {
                 deleteShoe(shoe)
             }
+
         } else {
+
+            //  Button: Save
             binding.saveBtn.setOnClickListener {
+
+                // Save the new entry
                 addShoe()
+
             }
         }
     }
 
+    // Delete function
     private fun deleteShoe(shoe: Shoe) {
+
+        // Pass the reference to selected entry, and initialize the delete function.
+        // *****
+        // We are passing the reference of our selected entry to the deleteShoe() function
+        // stored in the ShoeViewModel.kt file.
         viewModel.deleteShoe(shoe)
 
+        // After deleting, take the user back to the List Fragment.
         findNavController().navigate(
             R.id.action_addShoeFragment_to_shoeListFragment
         )
 
     }
 
+    // Add Function
     private fun addShoe() {
+
 
         if (isValidEntry()) {
 
@@ -111,19 +130,29 @@ class AddShoeFragment : Fragment() {
                 binding.notesInput.text.toString()
             )
 
+            // After completing the addShoe() function, navigate the user back to the List Fragment.
             findNavController().navigate(
                 R.id.action_addShoeFragment_to_shoeListFragment
             )
 
         } else {
-            Toast.makeText(requireContext(), "Please provide complete data.", Toast.LENGTH_SHORT)
+
+            // If the Edit fields are left blank, then inform the user to provide complete data.
+            Toast.makeText(
+                requireContext(),
+                "Please provide the complete data.",
+                Toast.LENGTH_SHORT
+            )
                 .show()
+
         }
     }
 
     private fun updateShoe() {
+
         if (isValidEntry()) {
 
+            //
             viewModel.updateShoe(
                 id = navigationArgs.id,
                 model = binding.shoeModelInput.text.toString(),
@@ -136,10 +165,23 @@ class AddShoeFragment : Fragment() {
                 notes = binding.notesInput.text.toString()
             )
 
+            // Navigate the user back to the Shoe List Fragment
             findNavController().navigate(
                 R.id.action_addShoeFragment_to_shoeListFragment
             )
+
+        } else {
+
+            // If the Edit fields are left blank, then inform the user to provide complete data.
+            Toast.makeText(
+                requireContext(),
+                "Please provide the complete data.",
+                Toast.LENGTH_SHORT
+            )
+                .show()
+
         }
+
     }
 
     /**
