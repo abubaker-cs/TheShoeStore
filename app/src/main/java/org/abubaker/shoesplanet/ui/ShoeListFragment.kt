@@ -25,28 +25,28 @@ class ShoeListFragment : Fragment() {
 
     private var _binding: FragmentShoeListBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
 
-    // TO DO: Refactor the creation of the view model to take an instance of
-    //  ShoeViewModelFactory. The factory should take an instance of the Database retrieved
-    //  from BaseApplication
+    // Get reference to our viewModel i.e. ShoeViewModel
     private val viewModel: ShoeViewModel by activityViewModels {
+
+        // The ShoeViewModelFactory will take an instance of the Database retrieved from BaseApplication
         ShoeViewModelFactory(
             (activity?.application as BaseApplication).database.shoeDao()
         )
+
     }
 
+    /**
+     * Inflate XML Layout: @layout/fragment_shoe_list.xml
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_shoe_list, container, false)
 
         // Inflate the layout for this fragment
-        // FragmentShoeListBinding.inflate(inflater, container, false)
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         return binding.root
 
@@ -55,24 +55,26 @@ class ShoeListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Setup the adapter
         val adapter = ShoeListAdapter { shoe ->
 
-            // List > Details
+            // Pass the reference of the currently selected shoe item, so the user can be navigated
+            // to the "Details Screen" as defined in the @res/navigation/nav_graph.xml
             val action =
                 ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(shoe.id)
 
-            //
+            // Navigate the user to the "Shoe Detail" Fragment. @layout/fragment_shoe_details.xml
             findNavController().navigate(action)
         }
-
-        // lifecycle.coroutineScope.launch {}
 
         // Observe the list of shoes from the viewModel and submit it the adapter
         viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
 
+            // If the database is empty then display a message, otherwise show the RecyclerView,
+            // so the list can be populated in it.
             if (shoes.isEmpty()) {
 
-                // Display "No records found" view
+                // If the database is empty then display "No Records found" message.
                 binding.apply {
                     recyclerView.visibility = View.GONE
                     emptyView.visibility = View.VISIBLE
@@ -93,15 +95,19 @@ class ShoeListFragment : Fragment() {
 
             }
 
-
         }
 
+        // binding.apply is the shorthand, i.e. instead of typing bind.* for ever UI component,
+        // we can simply wrap the code using binding.apply{} and then directly type the IDs
         binding.apply {
 
+            // This is the reference to the adapter, which we recently defined in the same file.
             recyclerView.adapter = adapter
 
+            // FAB: Add New Shoe Entry
             addShoeFab.setOnClickListener {
 
+                // Navigate the user to the "Add Shoe" screen (@layout/fragment_add_shoe.xml)
                 findNavController().navigate(
                     R.id.action_shoeListFragment_to_addShoeFragment
                 )
@@ -109,6 +115,7 @@ class ShoeListFragment : Fragment() {
             }
 
         }
+
     }
 
 }
