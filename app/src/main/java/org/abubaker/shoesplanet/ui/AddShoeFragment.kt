@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -54,7 +55,8 @@ class AddShoeFragment : Fragment() {
         // Inflate the layout for this fragment
         // return inflater.inflate(R.layout.fragment_add_shoe, container, false)
         // Inflate the layout for this fragment
-        _binding = FragmentAddShoeBinding.inflate(inflater, container, false)
+        // _binding = FragmentAddShoeBinding.inflate(inflater, container, false)
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_shoe, container, false)
         return binding.root
     }
 

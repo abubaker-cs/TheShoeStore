@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -46,7 +47,9 @@ class ShoeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentShoeDetailsBinding.inflate(inflater, container, false)
+        // _binding = FragmentShoeDetailsBinding.inflate(inflater, container, false)
+        _binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
         return binding.root
     }
 
