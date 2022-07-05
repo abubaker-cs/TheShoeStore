@@ -23,51 +23,54 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // binding = ActivityMainBinding.inflate(layoutInflater)
-        // setContentView(binding.root)
-
+        // Inflate Layout: @layout/activity_main.xml
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setSupportActionBar(binding.toolbar)
-        // val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // https://stackoverflow.com/questions/50502269/illegalstateexception-link-does-not-have-a-navcontroller-set
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 
         val navController = navHostFragment.navController
-        // appBarConfiguration = AppBarConfiguration(navController.graph)
 
-        // This will allow us to hide the < Back button from the shoe_list_fragment
-        // Reference: https://developer.android.com/guide/navigation/navigation-ui#appbarconfiguration
+        /**
+         * This will allow us to hide the < Back button from the shoe_list_fragment
+         * Reference: https://developer.android.com/guide/navigation/navigation-ui#appbarconfiguration
+         */
         appBarConfiguration = AppBarConfiguration(setOf(R.id.shoeListFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         /**
-         * Hide toolbar on specific fragments
+         * This will hide toolbar on specific fragments
          */
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
 
+                // Hide Toolbar: Splash
                 R.id.splashFragment -> {
                     supportActionBar?.hide()
                     binding.toolbar.visibility = View.GONE
                 }
 
+                // Hide Toolbar:OnBoarding
                 R.id.onboardingFragment -> {
                     supportActionBar?.hide()
                     binding.toolbar.visibility = View.GONE
                 }
 
+                // Hide Toolbar:Sign in
                 R.id.signInFragment -> {
                     supportActionBar?.hide()
                     binding.toolbar.visibility = View.GONE
                 }
 
+                // Hide Toolbar: Sign up
                 R.id.signUpFragment -> {
                     supportActionBar?.hide()
                     binding.toolbar.visibility = View.GONE
                 }
 
+                // Display Toolbar
                 else -> {
                     supportActionBar?.show()
                     binding.toolbar.visibility = View.VISIBLE
@@ -78,31 +81,36 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * We will setup the toolbar with "log out" menu item, but we will also only display it in the "Shoe List" fragment.
+     */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
-        // Inflate the XML layout: res/menu/main_menu.xml
+        // Inflate the layout for menu: @res/menu/main_menu.xml
         menuInflater.inflate(R.menu.main_menu, menu)
 
+        // Get reference to navHost
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Get reference to Toolbar widget in the @layout/activity_main.xml
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
+
+        // This will get reference to the logout menu item stored in @res/menu/main_menu.xml
         val menuItem = toolbar.menu.findItem(R.id.action_logout)
 
-
-        /**
-         * This code will only show the logout button on the shoeListFragment
-         */
+        // We will be using a condition to only display the "logout" menu item on the "Shoe List" fragment.
         navController.addOnDestinationChangedListener { _, destination, _ ->
 
             when (destination.id) {
 
+                // Display the logout menu item on the "Shoe List" fragment.
                 R.id.shoeListFragment -> {
                     menuItem.isVisible = true
                 }
 
+                // Hide the logout menu item from all other screens.
                 else -> {
                     menuItem.isVisible = false
                 }
@@ -110,19 +118,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
-
         return true
-
 
     }
 
+    // Here we will define what should happen when the user will click on the "Log out" menu item.
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
 
+        // Action: Navigate the user to the to the "Sign In" fragment
         if (item.itemId == R.id.action_logout) {
             val navController = findNavController(R.id.nav_host_fragment)
             navController.navigate(R.id.signInFragment)
@@ -133,6 +136,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // Back Icon:
+    // This will enable a < icon in the toolbar so the user can navigate back to the previous screen(s).
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration)
