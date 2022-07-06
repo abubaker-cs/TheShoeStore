@@ -64,7 +64,6 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-
     // Lifecycle components
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0'
@@ -74,10 +73,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    // Used with ViewPager2
-    implementation 'com.tbuonomo:dotsindicator:4.2'
-
-    // Dot Indicator
+    // Dot Indicator: Used with ViewPager2
     implementation 'com.tbuonomo:dotsindicator:4.2'
 
     // Progress bar
