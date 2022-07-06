@@ -10,9 +10,6 @@ import org.abubaker.shoesplanet.model.Shoe
  * Data Access Object for database interaction.
  */
 
-// @Dao
-//interface ShoeDao {
-
 @Dao
 interface ShoeDao {
 
@@ -31,10 +28,9 @@ interface ShoeDao {
     /**
      * Flow:
      *
-     * Using Flow or LiveData as return type will ensure you get notified whenever the data in the database changes.
-     *
-     * Because of the Flow return type, Room also runs the query on the background thread.
-     * You don't need to explicitly make it a suspend function and call inside a coroutine scope.
+     * Using Flow or LiveData as return type will ensure we get notified whenever the data in the
+     * database changes. Because of the Flow return type, Room also runs the query on the background thread.
+     * We don't need to explicitly make it a suspend function and call inside a coroutine scope.
      */
 
     // Retrieve a Shoe from the database by id
