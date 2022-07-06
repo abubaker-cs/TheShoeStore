@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -85,8 +86,21 @@ class ShoeListFragment : Fragment() {
                     emptyView.visibility = View.GONE
                 }
 
-                shoes.forEach { shoe ->
-                    addView(shoe)
+                // Important, to clear all existing views from the #ll_shoes_list LinearLayout,
+                // otherwise shoes.froEach() will recreate existing entries in the LinearLayout
+                binding.llShoesList.removeAllViews()
+
+                shoes.forEach {
+
+                    DataBindingUtil.inflate<ListItemShoeBinding>(
+                        layoutInflater,
+                        R.layout.list_item_shoe,
+                        binding.llShoesList,
+                        true
+                    ).apply {
+                        this.shoe = it
+                    }
+
                 }
 
                 // Populate the recyclerview with the records.
@@ -121,6 +135,19 @@ class ShoeListFragment : Fragment() {
 
         }
 
+        // TODO - Navigate the user to the EDIT Screen
+        binding.llShoesList.setOnClickListener {
+
+
+            // If the Edit fields are left blank, then inform the user to provide complete data.
+            Toast.makeText(
+                requireContext(),
+                "You clicked me",
+                Toast.LENGTH_SHORT
+            )
+                .show()
+        }
+
         return binding.root
 
     }
@@ -128,19 +155,18 @@ class ShoeListFragment : Fragment() {
 
     private fun addView(shoe: Shoe) {
 
-        val listEntry = ListItemShoeBinding.inflate(
-            layoutInflater, null, false
+        val rowView: ListItemShoeBinding = DataBindingUtil.inflate(
+            layoutInflater,
+            R.layout.list_item_shoe,
+            binding.llShoesList,
+            false
         )
 
         // Reference to the dataBinding variable in list_item_shoe.xml
-        listEntry.shoe = shoe
-
-        // This will avoid duplication in the LinearLayout
-        // Call this method to remove all child views from the ViewGroup.
-        // binding.llShoesList.removeAllViews()
+        rowView.shoe = shoe
 
         binding.llShoesList.addView(
-            listEntry.root
+            rowView.root
         )
 
     }
