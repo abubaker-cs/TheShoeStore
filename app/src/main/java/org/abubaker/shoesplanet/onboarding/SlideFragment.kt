@@ -48,11 +48,11 @@ class SlideFragment : Fragment() {
                 // If it is the last slide, then update the button with label: "Finish"
                 binding.controllerBtn.text = "Finish"
 
-                // TODO Action for Finish Button: Navigate the user to the sign in fragment
+                // Finish Button: Take the user to the
                 binding.controllerBtn.setOnClickListener {
 
                     findNavController().navigate(
-                        R.id.action_onboardingFragment_to_signInFragment
+                        R.id.action_onboardingFragment_to_shoeListFragment
                     )
 
                 }

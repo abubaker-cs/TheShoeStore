@@ -84,9 +84,9 @@ class SplashFragment : Fragment() {
             // Wait for 2.55 seconds
             delay(2550)
 
-            // TODO Then navigate the user to the next fragment.
+            // Navigate the user to the SignIn Fragment
             findNavController().navigate(
-                R.id.action_splashFragment_to_onboardingFragment
+                R.id.action_splashFragment_to_signInFragment
             )
 
         }

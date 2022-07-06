@@ -32,10 +32,10 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO SignIn Button: Take the user back to the List Fragment
+        // SignIn Button: Take the user to the Splash fragment.
         binding.btnSignIn.setOnClickListener {
             findNavController().navigate(
-                R.id.action_loginFragment_to_shoeListFragment
+                R.id.action_signInFragment_to_onboardingFragment
             )
         }
 

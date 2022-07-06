@@ -31,7 +31,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Back Arrow: Take the user back to the Signup Fragment
+        // Back Arrow: Take the user back to the SignIn Fragment
         binding.btnBack.setOnClickListener {
             findNavController().navigate(
                 R.id.action_signUpFragment_to_signInFragment
