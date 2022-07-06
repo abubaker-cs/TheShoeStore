@@ -16,25 +16,29 @@ class SignUpFragment : Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
 
+    // Inflate XML file:
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        // _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+    ): View {
+
+        // @layout/fragment_sign_up.xml
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Back Arrow: Take the user back to the Signup Fragment
         binding.btnBack.setOnClickListener {
             findNavController().navigate(
                 R.id.action_signUpFragment_to_signInFragment
             )
         }
 
+        // Signup Button:  Take the user back to the Signup Fragment
         binding.btnSignUp.setOnClickListener {
             findNavController().navigate(
                 R.id.action_signUpFragment_to_signInFragment
