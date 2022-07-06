@@ -54,9 +54,14 @@
     <fragment
         android:id="@+id/addShoeFragment"
         android:name="org.abubaker.shoesplanet.ui.AddShoeFragment"
-        android:label="@string/add_fragment_title"
+        android:label="{title}"
         tools:layout="@layout/fragment_add_shoe"
         >
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            />
 
         <argument
             android:name="id"
@@ -112,7 +117,7 @@
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="org.abubaker.shoesplanet.onboarding.SlideFragment"
-        android:label="fragment_onboarding"
+        android:label="Instructions"
         tools:layout="@layout/fragment_onboarding"
         >
         <action

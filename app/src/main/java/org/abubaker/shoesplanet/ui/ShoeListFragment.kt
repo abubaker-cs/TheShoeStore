@@ -105,12 +105,16 @@ class ShoeListFragment : Fragment() {
             recyclerView.adapter = adapter
 
             // FAB: Add New Shoe Entry
+            // We are now passing the argument to the AddShoeFragment, so it can update the toolbar's
+            // title to display "Add New Shoe"
             addShoeFab.setOnClickListener {
 
                 // Navigate the user to the "Add Shoe" screen (@layout/fragment_add_shoe.xml)
-                findNavController().navigate(
-                    R.id.action_shoeListFragment_to_addShoeFragment
+                val action = ShoeListFragmentDirections.actionShoeListFragmentToAddShoeFragment(
+                    getString(R.string.add_fragment_title)
                 )
+
+                findNavController().navigate(action)
 
             }
 

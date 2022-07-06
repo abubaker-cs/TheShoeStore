@@ -2,7 +2,7 @@
     <string name="app_name">Shoes Planet</string>
     <string name="list_fragment_title">List of Shoes</string>
     <string name="details_fragment_title">Shoe Details</string>
-    <string name="add_fragment_title">Add New Shoe</string>
+    <string name="add_fragment_title">Add New Entry</string>
     <string name="edit_fragment_title">Edit Shoe</string>
     <string name="menu_logout">Logout</string>
     <string name="desc_fab_add">Add new shoe item</string>

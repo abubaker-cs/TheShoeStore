@@ -113,13 +113,18 @@ class ShoeDetailsFragment : Fragment() {
             shoeNotes.text = shoe.notes
 
             // FAB: Edit Button
+            // We are now passing the argument to the AddShoeFragment, so it can update the toolbar's
+            // title to display "Edit Shoe"
             editShoeFab.setOnClickListener {
 
                 // Navigate the user to the (@layout/fragment_add_shoe.xml) for editing the existing
                 // record. I will be using the same "Add Fragment", by replacing the "Add Button" with
                 // Save and Delete options (buttons).
                 val action =
-                    ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToAddShoeFragment(shoe.id)
+                    ShoeDetailsFragmentDirections.actionShoeDetailsFragmentToAddShoeFragment(
+                        getString(R.string.edit_fragment_title),
+                        shoe.id
+                    )
                 findNavController().navigate(action)
 
             }
