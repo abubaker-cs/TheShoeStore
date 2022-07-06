@@ -17,14 +17,17 @@ class ShoeListAdapter(
     private val clickListener: (Shoe) -> Unit
 ) : ListAdapter<Shoe, ShoeListAdapter.ShoeViewHolder>(DiffCallback) {
 
-    //
+    // ListItemShoeBinding refers to generated binding classes for @layout/list_item_shoe.xml
     class ShoeViewHolder(
         private var binding: ListItemShoeBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        //
         fun bind(shoe: Shoe) {
+
+            // This is the reference to the shoe variable defined in the list_item_shoes.xml using dataBinding
             binding.shoe = shoe
+
+            // Evaluates the pending bindings, updating any Views that have expressions bound to modified variables.
             binding.executePendingBindings()
         }
 
