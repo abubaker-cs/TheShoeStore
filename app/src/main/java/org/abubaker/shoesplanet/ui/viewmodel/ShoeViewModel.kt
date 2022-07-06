@@ -9,15 +9,20 @@ import org.abubaker.shoesplanet.model.Shoe
 /**
  * FILE 03
  *
- * Shared [ViewModel] to provide data to the [ShoeListFragment], [ShoeDetailFragment],
- * and [AddShoeFragment] and allow for interaction the the [ShoeDao]
+ * Shared ViewModel to provide data to the:
+ * 1. ShoeListFragment
+ * 2. ShoeDetailFragment
+ * 3. AddShoeFragment
+ *
+ * and allow for interaction the the ShoeDao
  */
 class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
-    // This property will set to a list of all shoes from the DAO
+    // This property will set a list of all shoes from the DAO
     val allShoes: LiveData<List<Shoe>> = shoeDao.getShoes().asLiveData()
 
-    // This method will take id: Long as a parameter and retrieve a Shoe from the
+    // This method will initialize following query through ShoeDao.kt to retrieve the required shoe's record.
+    // SELECT * from shoes_database WHERE id = :id
     fun getShoe(id: Long): LiveData<Shoe> {
         return shoeDao.getShoe(id).asLiveData()
     }
@@ -34,14 +39,31 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
         notes: String
     ) {
         val shoe = Shoe(
+
+            // Model
             modelNumber = model,
+
+            // Brand
             brandName = brand,
+
+            // Type
             shoeType = type,
+
+            // Price
             shoePrice = price,
+
+            // Color
             shoeColor = color,
+
+            // Size
             shoeSize = size,
+
+            // Shoe Availability
             inStock = inStock,
+
+            // Notes
             notes = notes
+
         )
 
         // Launching a new coroutine to insert an item in a non-blocking way
@@ -67,20 +89,39 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
         notes: String
     ) {
         val shoe = Shoe(
+
+            // Unique ID
             id = id,
+
+            // Model
             modelNumber = model,
+
+            // Name
             brandName = brand,
+
+            // Type
             shoeType = type,
+
+            // Price
             shoePrice = price,
+
+            // Color
             shoeColor = color,
+
+            // Size
             shoeSize = size,
+
+            // Shoe Availability
             inStock = inStock,
+
+            // Notes
             notes = notes
         )
 
+        // Launching a new coroutine to insert an item in a non-blocking way
         viewModelScope.launch(Dispatchers.IO) {
 
-            // TO DO: call the DAO method to update a shoe to the database here
+            // This will update an existing shoe entry in the database
             shoeDao.update(shoe)
 
         }
@@ -89,6 +130,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
     // Action: Delete the selected record
     fun deleteShoe(shoe: Shoe) {
 
+        // Launching a new coroutine to insert an item in a non-blocking way
         viewModelScope.launch(Dispatchers.IO) {
 
             // This will call the DAO method to delete the selected shoe record from the database
