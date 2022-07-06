@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import org.abubaker.shoesplanet.BaseApplication
 import org.abubaker.shoesplanet.R
 import org.abubaker.shoesplanet.databinding.FragmentShoeListBinding
+import org.abubaker.shoesplanet.databinding.ListItemShoeBinding
+import org.abubaker.shoesplanet.model.Shoe
 import org.abubaker.shoesplanet.ui.adapter.ShoeListAdapter
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
@@ -48,12 +50,7 @@ class ShoeListFragment : Fragment() {
 
         // Inflate: @layout/fragment_shoe_list.xml
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
-        return binding.root
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = this
 
         // Setup the adapter
         val adapter = ShoeListAdapter { shoe ->
@@ -76,7 +73,7 @@ class ShoeListFragment : Fragment() {
 
                 // If the database is empty then display "No Records found" message.
                 binding.apply {
-                    recyclerView.visibility = View.GONE
+                    llShoesList.visibility = View.GONE
                     emptyView.visibility = View.VISIBLE
                 }
 
@@ -84,8 +81,12 @@ class ShoeListFragment : Fragment() {
 
                 // Prepare the UI to display RecyclerView
                 binding.apply {
-                    recyclerView.visibility = View.VISIBLE
+                    llShoesList.visibility = View.VISIBLE
                     emptyView.visibility = View.GONE
+                }
+
+                shoes.forEach { shoe ->
+                    addView(shoe)
                 }
 
                 // Populate the recyclerview with the records.
@@ -102,7 +103,7 @@ class ShoeListFragment : Fragment() {
         binding.apply {
 
             // This is the reference to the adapter, which we recently defined in the same file.
-            recyclerView.adapter = adapter
+            // recyclerView.adapter = adapter
 
             // FAB: Add New Shoe Entry
             // We are now passing the argument to the AddShoeFragment, so it can update the toolbar's
@@ -119,6 +120,28 @@ class ShoeListFragment : Fragment() {
             }
 
         }
+
+        return binding.root
+
+    }
+
+
+    private fun addView(shoe: Shoe) {
+
+        val listEntry = ListItemShoeBinding.inflate(
+            layoutInflater, null, false
+        )
+
+        // Reference to the dataBinding variable in list_item_shoe.xml
+        listEntry.shoe = shoe
+
+        // This will avoid duplication in the LinearLayout
+        // Call this method to remove all child views from the ViewGroup.
+        // binding.llShoesList.removeAllViews()
+
+        binding.llShoesList.addView(
+            listEntry.root
+        )
 
     }
 
