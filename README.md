@@ -73,10 +73,10 @@ This project will consist of seven screens.
 
 ![screenshot1](screenshots/11.png)
 
+### Add New Shoe (With dropdown menus)
+
+![screenshot1](screenshots/12.png)
+
 ### Edit Shoe
 
 ![screenshot1](screenshots/13.png)
-
-### Edit Shoe (With dropdown menus)
-
-![screenshot1](screenshots/12.png)
