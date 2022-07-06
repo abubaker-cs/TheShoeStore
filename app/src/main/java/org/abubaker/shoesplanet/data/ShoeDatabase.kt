@@ -15,14 +15,13 @@ import org.abubaker.shoesplanet.model.Shoe
 @Database(entities = [Shoe::class], version = 1, exportSchema = false)
 abstract class ShoeDatabase : RoomDatabase() {
 
-    //
-    // abstract fun shoeDao(): ShoeDao
+    // Reference to the @data/ShoeDao.kt file
     abstract fun shoeDao(): ShoeDao
 
     //
     companion object {
 
-        // This helps in maintaining a single instance of the database opened at a given time.
+        // This will help in maintaining a single instance of the database opened at a given time.
         @Volatile
         private var INSTANCE: ShoeDatabase? = null
 
@@ -38,11 +37,9 @@ abstract class ShoeDatabase : RoomDatabase() {
              */
             return INSTANCE ?: synchronized(this) {
 
-                // Use Room's Room.databaseBuilder to create (shoes_database) database only if it
-                // doesn't exist. Otherwise, return the existing database.
-
                 // Inside the synchronized block, we will initialize the instance variable, and
-                // use the database builder to get the database.
+                // Use Room's Room.databaseBuilder to create shoes_database only if it doesn't exist.
+                // Otherwise, return the reference of existing database.
 
                 // Pass in:
                 // 1. application context
