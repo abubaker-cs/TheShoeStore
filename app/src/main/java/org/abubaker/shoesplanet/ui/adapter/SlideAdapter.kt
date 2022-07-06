@@ -33,9 +33,10 @@ class SlideAdapter(private val introList: List<Slide>) :
     }
 
 
-    // Inflate XML file: @layout/list_item_slide.xml
+    // Inflate XML file:
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SlideViewHolder {
 
+        // @layout/list_item_slide.xml
         return SlideViewHolder(
             ListItemSlideBinding.inflate(
                 LayoutInflater.from(parent.context),

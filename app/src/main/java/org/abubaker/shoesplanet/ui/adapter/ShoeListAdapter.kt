@@ -54,9 +54,10 @@ class ShoeListAdapter(
 
     }
 
-    // // Inflate XML file: @layout/list_item_shoe.xml
+    // // Inflate XML file:
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoeViewHolder {
 
+        // @layout/list_item_shoe.xml
         return ShoeViewHolder(
             ListItemShoeBinding.inflate(LayoutInflater.from(parent.context))
         )
