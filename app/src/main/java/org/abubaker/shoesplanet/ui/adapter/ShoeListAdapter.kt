@@ -30,22 +30,31 @@ class ShoeListAdapter(
 
     }
 
+    // DiffUtil.ItemCallback is the native class responsible for calculating the difference between
+    // the two lists. TIt exists to improve RecyclerView’s performance when handling list updates.
     //
+    // Reference:
+    // https://www.raywenderlich.com/21954410-speed-up-your-android-recyclerview-using-diffutil
     companion object DiffCallback : DiffUtil.ItemCallback<Shoe>() {
 
-        //
+        // An Item (i.e. Shoe record) consists of an:
+        // 1. id,
+        // 2. its value,
+        // 3. timeStamp, and
+        // 4. information stating if it’s done (checked) or not.
         override fun areItemsTheSame(oldItem: Shoe, newItem: Shoe): Boolean {
             return oldItem.id == newItem.id
         }
 
-        //
+        // To avoid redesigning the entire list when there’s a change, only the items that have
+        // different values between both lists will be updated.
         override fun areContentsTheSame(oldItem: Shoe, newItem: Shoe): Boolean {
             return oldItem == newItem
         }
 
     }
 
-    //
+    // // Inflate XML file: @layout/list_item_shoe.xml
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoeViewHolder {
 
         return ShoeViewHolder(
@@ -55,18 +64,22 @@ class ShoeListAdapter(
 
     }
 
-    //
+    // This will bind data and hold the record of the current Shoe
     override fun onBindViewHolder(holder: ShoeViewHolder, position: Int) {
 
-        //
+        // Get reference of the current Shoe, i.e. the unique #id
         val currentItem = getItem(position)
 
+        // Setting the click listener in onBindViewHolder is easy because the adapter is holding the
+        // list and we can access data items by their position in onBindViewHolder directly
         //
+        // Reference:
+        // https://oozou.com/blog/a-better-way-to-handle-click-action-in-a-recyclerview-item-60
         holder.itemView.setOnClickListener {
             clickListener(currentItem)
         }
 
-        //
+        // This will pass the reference of the currentItem
         holder.bind(currentItem)
     }
 

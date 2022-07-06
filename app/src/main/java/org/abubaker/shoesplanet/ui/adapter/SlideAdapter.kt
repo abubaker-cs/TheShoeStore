@@ -35,6 +35,7 @@ class SlideAdapter(private val introList: List<Slide>) :
 
     // Inflate XML file: @layout/list_item_slide.xml
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SlideViewHolder {
+
         return SlideViewHolder(
             ListItemSlideBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -42,6 +43,7 @@ class SlideAdapter(private val introList: List<Slide>) :
                 false
             )
         )
+
     }
 
     // This will bind data and hold the record of the current Slide
