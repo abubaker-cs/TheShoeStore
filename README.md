@@ -1,6 +1,6 @@
 # Shoes Planet (i.e. The Shoe Store)
 
-This project, i.e. "Build a Shoe Store Inventory App" was the 1st project
+This Shoes Planet project, i.e. was the 1st project "Build a Shoe Store Inventory App"
 for [Android Kotlin Developer Nanodegree by Udacity](https://www.udacity.com/course/android-kotlin-developer-nanodegree--nd940)
 . The goal of this project was to build an app that challenged me to implement the layouts and the
 navigation features.
