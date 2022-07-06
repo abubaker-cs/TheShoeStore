@@ -40,12 +40,10 @@
                 <!-- android:scaleType="fitXY" -->
                 <ImageView
                     android:id="@+id/iv_shoe_image"
+                    style="@style/thumbnail_detail"
                     android:layout_width="0dp"
                     android:layout_height="280dp"
-                    android:background="@color/detail_image_background"
                     android:contentDescription="@string/detail_image_desc"
-                    android:padding="36dp"
-                    android:scaleType="fitCenter"
                     android:src="@drawable/shoe01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -77,24 +75,16 @@
                 <!-- Model -->
                 <TextView
                     android:id="@+id/lbl_shoe_model"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/model_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_shoe_image"
                     />
 
                 <ImageView
                     android:id="@+id/ic_shoe_model"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_designer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_model"
@@ -104,11 +94,7 @@
 
                 <TextView
                     android:id="@+id/shoe_model"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_shoe_model"
                     app:layout_constraintTop_toTopOf="@+id/ic_shoe_model"
                     tools:hint="Shoe Model"
@@ -117,24 +103,16 @@
                 <!-- Brand -->
                 <TextView
                     android:id="@+id/lbl_shoe_brand"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/brand_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_model"
                     />
 
                 <ImageView
                     android:id="@+id/ic_brand_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_designer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_brand"
@@ -144,11 +122,7 @@
 
                 <TextView
                     android:id="@+id/brand_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_brand_name"
                     app:layout_constraintTop_toTopOf="@+id/ic_brand_name"
                     tools:hint="Brand"
@@ -157,24 +131,16 @@
                 <!-- Type -->
                 <TextView
                     android:id="@+id/lbl_shoe_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/shoe_type_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/brand_name"
                     />
 
                 <ImageView
                     android:id="@+id/ic_shoe_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_designer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_type"
@@ -184,11 +150,7 @@
 
                 <TextView
                     android:id="@+id/shoe_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_shoe_type"
                     app:layout_constraintTop_toTopOf="@+id/ic_shoe_type"
                     tools:hint="Shoe Model"
@@ -197,24 +159,16 @@
                 <!-- Price -->
                 <TextView
                     android:id="@+id/lbl_shoe_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/shoe_price_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_type"
                     />
 
                 <ImageView
                     android:id="@+id/ic_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_price"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_price"
@@ -223,11 +177,7 @@
 
                 <TextView
                     android:id="@+id/shoe_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_price"
                     app:layout_constraintTop_toTopOf="@+id/ic_price"
                     tools:hint="Price"
@@ -236,24 +186,16 @@
                 <!-- Color -->
                 <TextView
                     android:id="@+id/lbl_shoe_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/shoe_color_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_price"
                     />
 
                 <ImageView
                     android:id="@+id/ic_shoe_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_color"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_color"
@@ -263,11 +205,7 @@
 
                 <TextView
                     android:id="@+id/shoe_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_shoe_color"
                     app:layout_constraintTop_toTopOf="@+id/ic_shoe_color"
                     tools:hint="Color"
@@ -276,24 +214,16 @@
                 <!-- Size -->
                 <TextView
                     android:id="@+id/lbl_shoe_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/shoe_size_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_color"
                     />
 
                 <ImageView
                     android:id="@+id/ic_shoe_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_size"
@@ -303,11 +233,7 @@
 
                 <TextView
                     android:id="@+id/shoe_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_shoe_size"
                     app:layout_constraintTop_toTopOf="@+id/ic_shoe_size"
                     tools:hint="Size"
@@ -316,24 +242,16 @@
                 <!-- Size -->
                 <TextView
                     android:id="@+id/lbl_shoe_availability"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/shoe_availability_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_size"
                     />
 
                 <ImageView
                     android:id="@+id/ic_shoe_availability"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_availability"
@@ -343,11 +261,7 @@
 
                 <TextView
                     android:id="@+id/in_stock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_shoe_availability"
                     app:layout_constraintTop_toTopOf="@+id/ic_shoe_availability"
                     tools:hint="Shoe Availability?"
@@ -356,24 +270,16 @@
                 <!-- Notes -->
                 <TextView
                     android:id="@+id/lbl_shoe_notes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="24dp"
+                    style="@style/detail_label"
                     android:text="@string/shoe_notes_lbl"
-                    android:textAllCaps="true"
-                    android:textColor="@color/pink_color"
-                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/in_stock"
                     />
 
                 <ImageView
                     android:id="@+id/ic_shoe_notes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    style="@style/detail_icon"
                     android:contentDescription="@string/brand_icon"
-                    android:paddingTop="3dp"
                     android:src="@drawable/ic_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_notes"
@@ -382,11 +288,7 @@
 
                 <TextView
                     android:id="@+id/shoe_notes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textColor="@color/black"
-                    android:textSize="21sp"
+                    style="@style/detail_text"
                     app:layout_constraintStart_toEndOf="@+id/ic_shoe_notes"
                     app:layout_constraintTop_toTopOf="@+id/ic_shoe_notes"
                     tools:hint="Shoe Availability?"
