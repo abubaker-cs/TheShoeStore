@@ -12,7 +12,7 @@ object SlidesRecord {
         Slide(
             R.drawable.shoe01,
             "Instruction #1",
-            " incididunt ut labore et dolore magna aliqua ipsum \ndolor sit amet, consectetur adipi"
+            "Mauris quis iaculis ligula. Vivamus sollici \ntudin, diam vitae maximus pulvinar scing."
         ),
 
         // Slide #2
@@ -26,7 +26,7 @@ object SlidesRecord {
         Slide(
             R.drawable.shoe03,
             "Instruction #3",
-            "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat nostrud"
+            "Quisque id lacus sit amet magna ultricies lobo \nrtis ut aliquip ex ea commodo consequat."
         )
 
     )
