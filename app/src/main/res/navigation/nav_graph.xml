@@ -18,12 +18,16 @@
         <action
             android:id="@+id/action_shoeListFragment_to_addShoeFragment"
             app:destination="@id/addShoeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             />
 
         <!-- List > Details -->
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment"
             app:destination="@id/shoeDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             />
 
     </fragment>
@@ -73,6 +77,8 @@
         <action
             android:id="@+id/action_addShoeFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             />
 
     </fragment>
@@ -85,10 +91,14 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             />
         <action
             android:id="@+id/action_signInFragment_to_onboardingFragment"
             app:destination="@id/onboardingFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             />
     </fragment>
     <fragment
@@ -100,6 +110,8 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             app:popUpToInclusive="false"
             />
     </fragment>
@@ -112,6 +124,8 @@
         <action
             android:id="@+id/action_splashFragment_to_signInFragment"
             app:destination="@id/signInFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             />
     </fragment>
     <fragment
@@ -123,6 +137,8 @@
         <action
             android:id="@+id/action_onboardingFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
             />
     </fragment>
 
