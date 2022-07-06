@@ -17,51 +17,21 @@
         <!-- List > Add -->
         <action
             android:id="@+id/action_shoeListFragment_to_addShoeFragment"
-            app:destination="@id/addShoeFragment"
+            app:destination="@id/detailsFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right"
             />
 
-        <!-- List > Details -->
-        <action
-            android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment"
-            app:destination="@id/shoeDetailsFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            />
 
     </fragment>
 
-    <!-- Fragment: Details -->
-    <fragment
-        android:id="@+id/shoeDetailsFragment"
-        android:name="org.abubaker.shoesplanet.ui.ShoeDetailsFragment"
-        android:label="@string/details_fragment_title"
-        tools:layout="@layout/fragment_shoe_details"
-        >
-
-        <argument
-            android:name="id"
-            android:defaultValue="0L"
-            app:argType="long"
-            />
-
-        <!-- Details > Add -->
-        <action
-            android:id="@+id/action_shoeDetailsFragment_to_addShoeFragment"
-            app:destination="@id/addShoeFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            />
-
-    </fragment>
 
     <!-- Fragment: Add -->
     <fragment
-        android:id="@+id/addShoeFragment"
-        android:name="org.abubaker.shoesplanet.ui.AddShoeFragment"
+        android:id="@+id/detailsFragment"
+        android:name="org.abubaker.shoesplanet.ui.ShoeDetailsFragment"
         android:label="{title}"
-        tools:layout="@layout/fragment_add_shoe"
+        tools:layout="@layout/fragment_shoe_details"
         >
 
         <argument

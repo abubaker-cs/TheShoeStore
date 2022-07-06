@@ -12,7 +12,7 @@ import org.abubaker.shoesplanet.model.Shoe
  * Shared ViewModel to provide data to the:
  * 1. ShoeListFragment
  * 2. ShoeDetailFragment
- * 3. AddShoeFragment
+ * 3. ShoeDetailsFragment
  *
  * and allow for interaction the the ShoeDao
  */

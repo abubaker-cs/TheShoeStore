@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -58,11 +57,10 @@ class ShoeListFragment : Fragment() {
 
             // Pass the reference of the currently selected shoe item, so the user can be navigated
             // to the "Details Screen" as defined in the @res/navigation/nav_graph.xml
-            val action =
-                ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment(shoe.id)
+            // val action = ShoeListFragmentDirections.actionShoeListFragmentToAddShoeFragment(shoe.id)
 
             // Navigate the user to the "Shoe Detail" Fragment. @layout/fragment_shoe_details.xml
-            findNavController().navigate(action)
+            // findNavController().navigate(action)
         }
 
         // Observe the list of shoes from the viewModel and submit it the adapter
@@ -120,7 +118,7 @@ class ShoeListFragment : Fragment() {
             // recyclerView.adapter = adapter
 
             // FAB: Add New Shoe Entry
-            // We are now passing the argument to the AddShoeFragment, so it can update the toolbar's
+            // We are now passing the argument to the ShoeDetailsFragment, so it can update the toolbar's
             // title to display "Add New Shoe"
             addShoeFab.setOnClickListener {
 
@@ -138,14 +136,14 @@ class ShoeListFragment : Fragment() {
         // TODO - Navigate the user to the EDIT Screen
         binding.llShoesList.setOnClickListener {
 
+            // Navigate the user to the "Add Shoe" screen (@layout/fragment_add_shoe.xml)
+            // val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment()
+
+            // findNavController().navigate(action)
 
             // If the Edit fields are left blank, then inform the user to provide complete data.
-            Toast.makeText(
-                requireContext(),
-                "You clicked me",
-                Toast.LENGTH_SHORT
-            )
-                .show()
+            // Toast.makeText(requireContext(), "You clicked me", Toast.LENGTH_SHORT).show()
+
         }
 
         return binding.root
@@ -170,5 +168,7 @@ class ShoeListFragment : Fragment() {
         )
 
     }
+
+    // TODO: Logout Menu
 
 }

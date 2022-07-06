@@ -7,7 +7,7 @@
     <string name="menu_logout">Logout</string>
     <string name="desc_fab_add">Add new shoe item</string>
     <string name="fab_save">Save</string>
-    <string name="fab_delete">Delete</string>
+    <string name="fab_cancel">Cancel</string>
     <string name="fab_edit">Edit Shoe</string>
     <string name="price_icon">Price Icon</string>
     <string name="brand_icon">Brand Icon</string>

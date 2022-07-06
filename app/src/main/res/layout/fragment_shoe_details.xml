@@ -12,298 +12,274 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        tools:context=".ui.ShoeDetailsFragment"
         >
-
-        <!-- FAB: Edit -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/edit_shoe_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/fab_edit"
-            android:src="@drawable/ic_edit_shoe"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/relativeLayout"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 >
 
-                <!-- Thumbnail -->
-                <!-- android:scaleType="fitXY" -->
-                <ImageView
-                    android:id="@+id/iv_shoe_image"
-                    style="@style/thumbnail_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="280dp"
-                    android:contentDescription="@string/detail_image_desc"
-                    android:src="@drawable/shoe01"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
-
-                <!-- Icon: Favorite -->
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="wrap_content"
+                <!-- Shoe Model -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_model_label"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/fav_btn_bg"
-                    android:elevation="13dp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="@string/shoe_model"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     >
 
-                    <ImageView
-                        android:id="@+id/iv_favorite_shoe"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/fav_btn_desc"
-                        android:src="@drawable/ic_fav_unselected"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/shoe_model_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textAutoComplete"
                         />
-                </LinearLayout>
 
-                <!-- Model -->
-                <TextView
-                    android:id="@+id/lbl_shoe_model"
-                    style="@style/detail_label"
-                    android:text="@string/model_lbl"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Shoe Designer -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_designer"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/shoe_brand"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_shoe_image"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_model_label"
+                    app:startIconDrawable="@drawable/ic_designer"
+                    >
 
-                <ImageView
-                    android:id="@+id/ic_shoe_model"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_designer"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_model"
-                    app:tint="@color/icon_color"
-                    />
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_designer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/shoe_brand_text"
+                        tools:ignore="LabelFor"
+                        />
 
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/shoe_model"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_shoe_model"
-                    app:layout_constraintTop_toTopOf="@+id/ic_shoe_model"
-                    tools:hint="Shoe Model"
-                    />
-
-                <!-- Brand -->
-                <TextView
-                    android:id="@+id/lbl_shoe_brand"
-                    style="@style/detail_label"
-                    android:text="@string/brand_lbl"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_model"
-                    />
-
-                <ImageView
-                    android:id="@+id/ic_brand_name"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_designer"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_brand"
-                    app:tint="@color/icon_color"
-                    />
-
-
-                <TextView
-                    android:id="@+id/brand_name"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_brand_name"
-                    app:layout_constraintTop_toTopOf="@+id/ic_brand_name"
-                    tools:hint="Brand"
-                    />
-
-                <!-- Type -->
-                <TextView
-                    android:id="@+id/lbl_shoe_type"
-                    style="@style/detail_label"
-                    android:text="@string/shoe_type_lbl"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/brand_name"
-                    />
-
-                <ImageView
-                    android:id="@+id/ic_shoe_type"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_designer"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_type"
-                    app:tint="@color/icon_color"
-                    />
-
-
-                <TextView
+                <!-- Footwear Type -->
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/shoe_type"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_shoe_type"
-                    app:layout_constraintTop_toTopOf="@+id/ic_shoe_type"
-                    tools:hint="Shoe Model"
-                    />
-
-                <!-- Price -->
-                <TextView
-                    android:id="@+id/lbl_shoe_price"
-                    style="@style/detail_label"
-                    android:text="@string/shoe_price_lbl"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/shoe_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_type"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_designer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:startIconDrawable="@drawable/ic_footwear"
+                    >
 
-                <ImageView
-                    android:id="@+id/ic_price"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_price"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_price"
-                    app:tint="@color/icon_color"
-                    />
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/shoe_type_text"
+                        tools:ignore="LabelFor"
+                        />
 
-                <TextView
-                    android:id="@+id/shoe_price"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_price"
-                    app:layout_constraintTop_toTopOf="@+id/ic_price"
-                    tools:hint="Price"
-                    />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Color -->
-                <TextView
-                    android:id="@+id/lbl_shoe_color"
-                    style="@style/detail_label"
-                    android:text="@string/shoe_color_lbl"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_price"
-                    />
-
-                <ImageView
-                    android:id="@+id/ic_shoe_color"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_color"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_color"
-                    app:tint="@color/icon_color"
-                    />
-
-
-                <TextView
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/shoe_color"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_shoe_color"
-                    app:layout_constraintTop_toTopOf="@+id/ic_shoe_color"
-                    tools:hint="Color"
-                    />
-
-                <!-- Size -->
-                <TextView
-                    android:id="@+id/lbl_shoe_size"
-                    style="@style/detail_label"
-                    android:text="@string/shoe_size_lbl"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/shoe_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_color"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_type"
+                    app:startIconDrawable="@drawable/ic_color"
+                    >
 
-                <ImageView
-                    android:id="@+id/ic_shoe_size"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_size"
+                    <AutoCompleteTextView
+                        android:id="@+id/tv_shoe_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/shoe_color_text"
+                        tools:ignore="LabelFor"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Container for Shoe Size + Price -->
+                <LinearLayout
+                    android:id="@+id/ll_size_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_size"
-                    app:tint="@color/icon_color"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/shoe_price_label"
+                    >
 
+                    <!-- Shoe Size -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/shoe_size"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:hint="@string/shoe_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shoe_color"
+                        app:startIconDrawable="@drawable/ic_size"
+                        >
 
-                <TextView
-                    android:id="@+id/shoe_size"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_shoe_size"
-                    app:layout_constraintTop_toTopOf="@+id/ic_shoe_size"
-                    tools:hint="Size"
-                    />
+                        <AutoCompleteTextView
+                            android:id="@+id/tv_shoe_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:text="@string/shoe_size_text"
+                            tools:ignore="LabelFor"
+                            />
 
-                <!-- Size -->
-                <TextView
-                    android:id="@+id/lbl_shoe_availability"
-                    style="@style/detail_label"
-                    android:text="@string/shoe_availability_lbl"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/shoe_size"
-                    />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:id="@+id/ic_shoe_availability"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_size"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_availability"
-                    app:tint="@color/icon_color"
-                    />
+                    <!-- Price -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/shoe_price_label"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:hint="@string/shoe_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shoe_designer"
+                        >
 
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/shoe_price_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            />
 
-                <TextView
-                    android:id="@+id/in_stock"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_shoe_availability"
-                    app:layout_constraintTop_toTopOf="@+id/ic_shoe_availability"
-                    tools:hint="Shoe Availability?"
-                    />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
 
                 <!-- Notes -->
-                <TextView
-                    android:id="@+id/lbl_shoe_notes"
-                    style="@style/detail_label"
-                    android:text="@string/shoe_notes_lbl"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/shoe_notes_label"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/shoe_notes"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/in_stock"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/ll_size_price"
+                    >
 
-                <ImageView
-                    android:id="@+id/ic_shoe_notes"
-                    style="@style/detail_icon"
-                    android:contentDescription="@string/brand_icon"
-                    android:src="@drawable/ic_size"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/notes_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="4"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- In Stock? -->
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/in_stock_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/in_stock_checkbox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_notes"
-                    app:tint="@color/icon_color"
+                    app:layout_constraintTop_toBottomOf="@id/shoe_notes_label"
                     />
 
-                <TextView
-                    android:id="@+id/shoe_notes"
-                    style="@style/detail_text"
-                    app:layout_constraintStart_toEndOf="@+id/ic_shoe_notes"
-                    app:layout_constraintTop_toTopOf="@+id/ic_shoe_notes"
-                    tools:hint="Shoe Availability?"
-                    />
+                <!-- Group: Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/in_stock_checkbox"
+                    >
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!-- Button: Delete -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/cancel_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/fab_cancel"
+                        />
+
+                    <!-- Button: Save -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/fab_save"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
         </ScrollView>
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>
