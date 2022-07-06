@@ -30,3 +30,53 @@ This project will consist of seven screens.
   represent View Pager Dots Indicator with 3 different awesome styles.
 * [circularprogressbar](https://github.com/lopspower/CircularProgressBar) - This is an Android
   project allowing to realize a circular ProgressBar in the simplest way possible.
+
+## Screenshots
+
+### Splash Screen (with circularprogressbar)
+
+![screenshot1](screenshots/01.png)
+
+### SignIn
+
+![screenshot1](screenshots/02.png)
+
+### Create an Account
+
+![screenshot1](screenshots/03.png)
+
+### Instruction #1 (ViewPager2 + Dot Indicator)
+
+![screenshot1](screenshots/04.png)
+
+### Instruction #2 (ViewPager2 + Dot Indicator)
+
+![screenshot1](screenshots/05.png)
+
+### Instruction #3 (ViewPager2 + Dot Indicator)
+
+![screenshot1](screenshots/06.png)
+
+### List of Shoes (When no record exists)
+
+![screenshot1](screenshots/14.png)
+
+### List of Shoes (with entries)
+
+![screenshot1](screenshots/07.png)
+
+### Shoe Details
+
+![screenshot1](screenshots/09.png)
+
+### Add New Shoe
+
+![screenshot1](screenshots/11.png)
+
+### Edit Shoe
+
+![screenshot1](screenshots/13.png)
+
+### Edit Shoe (With dropdown menus)
+
+![screenshot1](screenshots/12.png)
