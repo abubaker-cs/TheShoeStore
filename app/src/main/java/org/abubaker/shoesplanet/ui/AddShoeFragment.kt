@@ -272,15 +272,30 @@ class AddShoeFragment : Fragment() {
 
     }
 
-    // TODO - add more fields for validation
+    // This will capture and send user provided data to the ShoeViewModel.kt for validation
     private fun isValidEntry() = viewModel.isValidEntry(
+
+        // Shoe Model
         binding.shoeModelInput.text.toString(),
+
+        // Brand
         binding.tvShoeDesigner.text.toString(),
+
+        // Shoe Type
         binding.tvShoeType.text.toString(),
+
+        // Price
         binding.shoePriceInput.text.toString(),
+
+        // Color
         binding.tvShoeColor.text.toString(),
+
+        // Shoe Size
         binding.tvShoeSize.text.toString(),
+
+        // Notes
         binding.notesInput.text.toString()
+
     )
 
     // This function will be used to populate lists in the dropdown menus

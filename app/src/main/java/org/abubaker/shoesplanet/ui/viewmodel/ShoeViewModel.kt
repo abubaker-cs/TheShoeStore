@@ -98,8 +98,7 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
     }
 
-    // Action: Validation
-    // TODO - Extend it
+    // This will validate user provide data, to make sure that no text field was left blank.
     fun isValidEntry(
         model: String,
         brand: String,
