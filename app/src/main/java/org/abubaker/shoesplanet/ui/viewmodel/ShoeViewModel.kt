@@ -100,8 +100,22 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
     // Action: Validation
     // TODO - Extend it
-    fun isValidEntry(name: String, model: String): Boolean {
-        return name.isNotBlank() && model.isNotBlank()
+    fun isValidEntry(
+        model: String,
+        brand: String,
+        type: String,
+        price: String,
+        color: String,
+        size: String,
+        notes: String
+    ): Boolean {
+        return model.isNotBlank() &&
+                brand.isNotBlank() &&
+                type.isNotBlank() &&
+                price.isNotBlank() &&
+                color.isNotBlank() &&
+                size.isNotBlank() &&
+                notes.isNotBlank()
     }
 
 }

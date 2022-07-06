@@ -163,7 +163,7 @@ class AddShoeFragment : Fragment() {
 
     private fun updateShoe() {
 
-        // We wil first validate, to make sure that complete required data was provided.
+        // We wil first validate, to make sure that required data was provided.
         if (isValidEntry()) {
 
             //
@@ -274,9 +274,13 @@ class AddShoeFragment : Fragment() {
 
     // TODO - add more fields for validation
     private fun isValidEntry() = viewModel.isValidEntry(
-
+        binding.shoeModelInput.text.toString(),
         binding.tvShoeDesigner.text.toString(),
-        binding.shoeModelInput.text.toString()
+        binding.tvShoeType.text.toString(),
+        binding.shoePriceInput.text.toString(),
+        binding.tvShoeColor.text.toString(),
+        binding.tvShoeSize.text.toString(),
+        binding.notesInput.text.toString()
     )
 
     // This function will be used to populate lists in the dropdown menus
