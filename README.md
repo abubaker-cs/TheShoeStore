@@ -1,4 +1,4 @@
-# The Shoe Store
+# Shoes Planet (i.e. The Shoe Store)
 This project will consist of seven screens.
 
 1. Splash Screen
