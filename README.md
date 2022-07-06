@@ -9,8 +9,7 @@ I went beyond the project's initial requirements and extended the scope of proje
 advance features, such as Room Database, Recyclerview, ViewPager2 for Slideshow and integrated a 3rd
 party library to show circular progress bar with animation.
 
-This project consists of mainly a single MainActivity and multiple Fragments consist of seven
-screens.
+This project consists of mainly a single MainActivity and seven Fragments:
 
 1. Splash Screen
 2. SignIn screen
