@@ -82,7 +82,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/model_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_shoe_image"
@@ -98,7 +98,7 @@
                     android:src="@drawable/ic_designer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_model"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
 
@@ -122,7 +122,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/brand_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_model"
@@ -138,7 +138,7 @@
                     android:src="@drawable/ic_designer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_brand"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
 
@@ -162,7 +162,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/shoe_type_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/brand_name"
@@ -178,7 +178,7 @@
                     android:src="@drawable/ic_designer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_type"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
 
@@ -202,7 +202,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/shoe_price_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_type"
@@ -218,7 +218,7 @@
                     android:src="@drawable/ic_price"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_price"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
                 <TextView
@@ -241,7 +241,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/shoe_color_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_price"
@@ -257,7 +257,7 @@
                     android:src="@drawable/ic_color"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_color"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
 
@@ -281,7 +281,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/shoe_size_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_color"
@@ -297,7 +297,7 @@
                     android:src="@drawable/ic_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_size"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
 
@@ -321,7 +321,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/shoe_availability_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/shoe_size"
@@ -337,7 +337,7 @@
                     android:src="@drawable/ic_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_availability"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
 
@@ -361,7 +361,7 @@
                     android:layout_margin="24dp"
                     android:text="@string/shoe_notes_lbl"
                     android:textAllCaps="true"
-                    android:textColor="#FF69B4"
+                    android:textColor="@color/pink_color"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/in_stock"
@@ -377,7 +377,7 @@
                     android:src="@drawable/ic_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lbl_shoe_notes"
-                    app:tint="#316bff"
+                    app:tint="@color/icon_color"
                     />
 
                 <TextView
