@@ -18,16 +18,16 @@
         <action
             android:id="@+id/action_shoeListFragment_to_addShoeFragment"
             app:destination="@id/addShoeFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             />
 
         <!-- List > Details -->
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailsFragment"
             app:destination="@id/shoeDetailsFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             />
 
     </fragment>
@@ -50,6 +50,8 @@
         <action
             android:id="@+id/action_shoeDetailsFragment_to_addShoeFragment"
             app:destination="@id/addShoeFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             />
 
     </fragment>
@@ -77,8 +79,8 @@
         <action
             android:id="@+id/action_addShoeFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             />
 
     </fragment>
