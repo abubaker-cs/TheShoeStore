@@ -6,13 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import org.abubaker.shoesplanet.databinding.ListItemSlideBinding
 import org.abubaker.shoesplanet.model.Slide
 
+/**
+ * This Adapter class will be used to bind data for ViewPager2 in the SlideFragment.kt
+ */
 class SlideAdapter(private val introList: List<Slide>) :
     RecyclerView.Adapter<SlideAdapter.SlideViewHolder>() {
 
-    // Bind UI
+    // SlideViewHolder: It will be used to bind data with UI components
     inner class SlideViewHolder(private val binding: ListItemSlideBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        // This will receive a single instance of Slide and bind data with it.
         fun bindItem(slide: Slide) {
 
             // Thumbnail
@@ -25,10 +29,11 @@ class SlideAdapter(private val introList: List<Slide>) :
             binding.descTv.text = slide.desc
 
         }
+
     }
 
 
-    // Inflate XML file.
+    // Inflate XML file: @layout/list_item_slide.xml
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SlideViewHolder {
         return SlideViewHolder(
             ListItemSlideBinding.inflate(
@@ -39,12 +44,12 @@ class SlideAdapter(private val introList: List<Slide>) :
         )
     }
 
-    //
+    // This will bind data and hold the record of the current Slide
     override fun onBindViewHolder(holder: SlideViewHolder, position: Int) {
         holder.bindItem(introList[position])
     }
 
-    // Total Items to display
+    // This will return the total Items (rows) in the database
     override fun getItemCount(): Int {
         return introList.size
     }
