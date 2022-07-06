@@ -109,10 +109,10 @@ class AddShoeFragment : Fragment() {
 
     }
 
-    // Add Function
+    // addShoe() - Add Function, this will create new entry in the database.
     private fun addShoe() {
 
-
+        // We wil first validate user provided entries, to make sure that required data was provided.
         if (isValidEntry()) {
 
             viewModel.addShoe(
@@ -161,12 +161,15 @@ class AddShoeFragment : Fragment() {
         }
     }
 
+    /**
+     * updateShoe() - This will update existing record
+     */
     private fun updateShoe() {
 
-        // We wil first validate, to make sure that required data was provided.
+        // We wil first validate user provided entries, to make sure that required data was provided.
         if (isValidEntry()) {
 
-            //
+            // This will update existing record
             viewModel.updateShoe(
 
                 // Unique ID
@@ -218,7 +221,7 @@ class AddShoeFragment : Fragment() {
     }
 
     /**
-     * This function will receive the user's provided data, and initialize the updateShoe() function
+     * bindShoe() - This function will receive the user's provided data, and initialize the updateShoe() function
      */
     private fun bindShoe(shoe: Shoe) {
 
