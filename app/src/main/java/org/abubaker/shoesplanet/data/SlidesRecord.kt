@@ -10,23 +10,41 @@ object SlidesRecord {
 
         // Slide #1
         Slide(
+
+            // Thumbnail
             R.drawable.shoe01,
+
+            // Title
             "Instruction #1",
-            "Mauris quis iaculis ligula. Vivamus sollici \ntudin, diam vitae maximus pulvinar scing."
+
+            // Description
+            "Mauris quis iaculis ligula. Vivamus sollici tudin, diam vitae maximus pulvinar."
         ),
 
         // Slide #2
         Slide(
+
+            // Thumbnail
             R.drawable.shoe02,
+
+            // Title
             "Instruction #2",
-            "Lorem ipsum dolor sit amet, consectetur adipi \nscing elit, sed do eiusmod tempor amet."
+
+            // Description
+            "Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod."
         ),
 
         // Slide #3
         Slide(
+
+            // Thumbnail
             R.drawable.shoe03,
+
+            // Title
             "Instruction #3",
-            "Quisque id lacus sit amet magna ultricies lobo \nrtis ut aliquip ex ea commodo consequat."
+
+            // Description
+            "Quisque id lacus sit amet magna ultricies lobo rtis ut aliquip exea commodo."
         )
 
     )
