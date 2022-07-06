@@ -1,5 +1,16 @@
 # Shoes Planet (i.e. The Shoe Store)
-This project will consist of seven screens.
+
+This project, i.e. "Build a Shoe Store Inventory App" was the 1st project
+for [Android Kotlin Developer Nanodegree by Udacity](https://www.udacity.com/course/android-kotlin-developer-nanodegree--nd940)
+. The goal of this project was to build an app that challenged me to implement the layouts and the
+navigation features.
+
+I went beyond the project's initial requirements and extended the scope of project by implementing
+Room Database, Recyclerview, ViewPager2 for Slideshow and integrated a 3rd party library to show
+circular progress bar with animation.
+
+This project consists of mainly a single MainActivity and multiple Fragments consist of seven
+screens.
 
 1. Splash Screen
 2. SignIn screen
