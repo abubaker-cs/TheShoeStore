@@ -163,19 +163,39 @@ class AddShoeFragment : Fragment() {
 
     private fun updateShoe() {
 
+        // We wil first validate, to make sure that complete required data was provided.
         if (isValidEntry()) {
 
             //
             viewModel.updateShoe(
+
+                // Unique ID
                 id = navigationArgs.id,
+
+                // Shoe Model
                 model = binding.shoeModelInput.text.toString(),
+
+                // Brand / Designer
                 brand = binding.tvShoeDesigner.text.toString(),
+
+                // Shoe Type
                 type = binding.tvShoeType.text.toString(),
+
+                // Shoe Price
                 price = binding.shoePriceInput.text.toString(),
+
+                // Shoe Color
                 color = binding.tvShoeColor.text.toString(),
+
+                // Shoe Size
                 size = binding.tvShoeSize.text.toString(),
+
+                // Shoe Availability
                 inStock = binding.inStockCheckbox.isChecked,
+
+                // Notes
                 notes = binding.notesInput.text.toString()
+
             )
 
             // Navigate the user back to the Shoe List Fragment
@@ -198,37 +218,42 @@ class AddShoeFragment : Fragment() {
     }
 
     /**
-     * TODO
+     * This function will receive the user's provided data, and initialize the updateShoe() function
      */
     private fun bindShoe(shoe: Shoe) {
+
+        // Binding wrapper (shorthand)
         binding.apply {
 
             // Shoe Model
             shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
 
-            //
+            // Brand
             tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
 
-            //
+            // Shoe Type
             tvShoeType.setText(shoe.shoeType, TextView.BufferType.SPANNABLE)
 
-            //
+            // Price
             shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
 
-            //
+            // Color
             tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
 
-            //
+            // Shoe Size
             tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
 
-            //
+            // Availability
             inStockCheckbox.isChecked = shoe.inStock
 
-            //
+            // Notes
             notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
 
+            // This function will be used to populate lists in the dropdown menus
+            // Note: The keywords are defined in the @res/values/strings.xml file
             bindDataWithExposedDropdownMenus()
 
+            // Save Button: This function will initialize the data storage process
             saveBtn.setOnClickListener {
                 updateShoe()
             }
@@ -237,18 +262,25 @@ class AddShoeFragment : Fragment() {
 
     }
 
-    // Safeguard
+    // Safeguard - Populate Lists in Dropdown Menus onResume() lifecycle event.
     override fun onResume() {
         super.onResume()
+
+        // This function will be used to populate lists in the dropdown menus
+        // Note: The keywords are defined in the @res/values/strings.xml file
         bindDataWithExposedDropdownMenus()
+
     }
 
     // TODO - add more fields for validation
     private fun isValidEntry() = viewModel.isValidEntry(
+
         binding.tvShoeDesigner.text.toString(),
         binding.shoeModelInput.text.toString()
     )
 
+    // This function will be used to populate lists in the dropdown menus
+    // Note: The keywords are defined in the @res/values/strings.xml file
     private fun bindDataWithExposedDropdownMenus() {
 
         // Shoe Type
