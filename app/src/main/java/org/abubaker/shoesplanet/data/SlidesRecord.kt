@@ -5,6 +5,7 @@ import org.abubaker.shoesplanet.model.Slide
 
 object SlidesRecord {
 
+    // This will contain dummy data for the slides that will be displayed using ViewPager2
     val Slides = listOf(
 
         // Slide #1
