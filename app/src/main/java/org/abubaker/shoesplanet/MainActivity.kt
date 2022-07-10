@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         /**
-         * This will hide toolbar on specific fragments
+         * This will hide the toolbar on specific fragments
          */
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
