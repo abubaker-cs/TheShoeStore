@@ -85,9 +85,11 @@ class ShoeListFragment : Fragment() {
                     emptyView.visibility = View.GONE
                 }
 
+                // Todo: removeAllViews() vs invalidateAll()
                 // Important, to clear all existing views from the #ll_shoes_list LinearLayout,
                 // otherwise shoes.froEach() will recreate existing entries in the LinearLayout
-                binding.llShoesList.removeAllViews()
+                // binding.llShoesList.removeAllViews()
+                binding.invalidateAll()
 
                 shoes.forEach {
 

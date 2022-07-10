@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import org.abubaker.shoesplanet.BaseApplication
@@ -48,7 +49,7 @@ class ShoeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        // Inflate: @layout/fragment_add_shoe.xml
+        // Inflate: @layout/fragment_shoe_details.xml
         _binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
         return binding.root
@@ -75,9 +76,10 @@ class ShoeDetailsFragment : Fragment() {
 
             }
 
-            // This will be helpful to let the user DELETE existing record, (in the Edit Mode)
+            // Cancel Button:
             binding.cancelBtn.setOnClickListener {
-                // TODO
+                // TODO: Cancel Functionality
+                view.findNavController().navigate(R.id.shoeListFragment)
             }
 
         } else {
