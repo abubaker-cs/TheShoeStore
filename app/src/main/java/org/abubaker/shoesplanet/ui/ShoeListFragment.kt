@@ -1,18 +1,19 @@
 package org.abubaker.shoesplanet.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.abubaker.shoesplanet.BaseApplication
 import org.abubaker.shoesplanet.R
 import org.abubaker.shoesplanet.databinding.FragmentShoeListBinding
 import org.abubaker.shoesplanet.databinding.ListItemShoeBinding
-import org.abubaker.shoesplanet.model.Shoe
 import org.abubaker.shoesplanet.ui.adapter.ShoeListAdapter
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
@@ -133,42 +134,37 @@ class ShoeListFragment : Fragment() {
 
         }
 
-        // TODO - Navigate the user to the EDIT Screen
-        binding.llShoesList.setOnClickListener {
-
-            // Navigate the user to the "Add Shoe" screen (@layout/fragment_add_shoe.xml)
-            // val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment()
-
-            // findNavController().navigate(action)
-
-            // If the Edit fields are left blank, then inform the user to provide complete data.
-            // Toast.makeText(requireContext(), "You clicked me", Toast.LENGTH_SHORT).show()
-
-        }
-
         return binding.root
 
     }
 
+    // Logout Menu
+    // Note setHasOptionsMenu(true) has been depreciated, we will be using addMenuProvider():
+    // https://developer.android.com/jetpack/androidx/releases/activity#1.4.0-alpha01
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-    private fun addView(shoe: Shoe) {
+        // The usage of an interface lets you inject your own implementation
+        val menuHost: MenuHost = requireActivity()
 
-        val rowView: ListItemShoeBinding = DataBindingUtil.inflate(
-            layoutInflater,
-            R.layout.list_item_shoe,
-            binding.llShoesList,
-            false
-        )
+        // Add menu items without using the Fragment Menu APIs
+        // Note how we can tie the MenuProvider to the viewLifecycleOwner
+        // and an optional Lifecycle.State (here, RESUMED) to indicate when
+        // the menu should be visible
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                // Add menu items here
+                menuInflater.inflate(R.menu.main_menu, menu)
+            }
 
-        // Reference to the dataBinding variable in list_item_shoe.xml
-        rowView.shoe = shoe
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                // Handle the menu selection
+                // Reference: https://developer.android.com/guide/navigation/navigation-navigate#id
+                view.findNavController().navigate(R.id.signInFragment)
+                return true
+            }
 
-        binding.llShoesList.addView(
-            rowView.root
-        )
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
     }
-
-    // TODO: Logout Menu
 
 }
