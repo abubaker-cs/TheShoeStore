@@ -1,6 +1,7 @@
 package org.abubaker.shoesplanet
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -37,6 +38,44 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+        /**
+         * This will hide toolbar on specific fragments
+         */
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+
+                // Hide Toolbar: Splash
+                R.id.splashFragment -> {
+                    supportActionBar?.hide()
+                    binding.toolbar.visibility = View.GONE
+                }
+
+                // Hide Toolbar:OnBoarding
+                R.id.onboardingFragment -> {
+                    supportActionBar?.hide()
+                    binding.toolbar.visibility = View.GONE
+                }
+
+                // Hide Toolbar:Sign in
+                R.id.signInFragment -> {
+                    supportActionBar?.hide()
+                    binding.toolbar.visibility = View.GONE
+                }
+
+                // Hide Toolbar: Sign up
+                R.id.signUpFragment -> {
+                    supportActionBar?.hide()
+                    binding.toolbar.visibility = View.GONE
+                }
+
+                // Display Toolbar
+                else -> {
+                    supportActionBar?.show()
+                    binding.toolbar.visibility = View.VISIBLE
+                }
+
+            }
+        }
 
     }
 
