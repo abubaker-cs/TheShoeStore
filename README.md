@@ -9,15 +9,14 @@ I went beyond the project's initial requirements and extended the scope of proje
 advance features, such as Room Database, Recyclerview, ViewPager2 for Slideshow and integrated a 3rd
 party library to show circular progress bar with animation.
 
-This project consists of mainly a single MainActivity and seven Fragments:
+This project consists of mainly a single MainActivity and six Fragments:
 
 1. Splash Screen
 2. SignIn screen
 3. SignUp screen
 4. Instructions screen
 5. Listing Screen
-6. Add/Edit Screen
-7. Details screen
+6. Details (add) Screen
 
 ## Built With
 * [ViewBinding](https://developer.android.com/topic/libraries/view-binding) - View binding is a
