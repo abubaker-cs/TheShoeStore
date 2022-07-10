@@ -76,13 +76,13 @@ class ShoeDetailsFragment : Fragment() {
 
             }
 
-            // Cancel Button:
-            binding.cancelBtn.setOnClickListener {
-                // TODO: Cancel Functionality
-                view.findNavController().navigate(R.id.shoeListFragment)
-            }
 
         } else {
+
+            // Cancel Button:
+            binding.cancelBtn.setOnClickListener {
+                view.findNavController().navigate(R.id.shoeListFragment)
+            }
 
             //  Button: Save
             //  The save button will be only shown if the entry ID has not been found in the previous records.
