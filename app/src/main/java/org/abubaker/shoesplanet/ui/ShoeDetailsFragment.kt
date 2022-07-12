@@ -51,46 +51,25 @@ class ShoeDetailsFragment : Fragment() {
         // Inflate: @layout/fragment_shoe_details.xml
         _binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Get the ID of the Entry Item
-        val id = navigationArgs.id
+        // TODO Cancel Button:
+        binding.cancelBtn.setOnClickListener {
+            view.findNavController().navigate(R.id.shoeListFragment)
+        }
 
-        // We are checking if the ID already exists in the Database
-        if (id > 0) {
+        //  TODO Button: Save
+        //  The save button will be only shown if the entry ID has not been found in the previous records.
+        binding.saveBtn.setOnClickListener {
 
-            // This is an observer method, we will use it to pass the user's provided data and start
-            // the storage process.
-//            viewModel.getShoe(id).observe(this.viewLifecycleOwner) { selectedShoe ->
-//
-//                // Store the user provide data in the shoe variable
-//                shoe = selectedShoe
-//
-//                // Pass in the user's provided data, and initialize the bindShoe() function
-//                bindShoe(shoe)
-//
-//            }
+            // Save the new entry
+            addShoe()
 
-
-        } else {
-
-            // TODO Cancel Button:
-            binding.cancelBtn.setOnClickListener {
-                view.findNavController().navigate(R.id.shoeListFragment)
-            }
-
-            //  TODO Button: Save
-            //  The save button will be only shown if the entry ID has not been found in the previous records.
-            binding.saveBtn.setOnClickListener {
-
-                // Save the new entry
-                addShoe()
-
-            }
         }
     }
 
@@ -146,121 +125,6 @@ class ShoeDetailsFragment : Fragment() {
         }
     }
 
-    /**
-     * updateShoe() - This will update existing record
-     */
-//    private fun updateShoe() {
-//
-//        // We wil first validate user provided entries, to make sure that required data was provided.
-//        if (isValidEntry()) {
-//
-//            // This will update existing record
-//            viewModel.updateShoe(
-//
-//                // Unique ID
-//                id = navigationArgs.id,
-//
-//                // Shoe Model
-//                model = binding.shoeModelInput.text.toString(),
-//
-//                // Brand / Designer
-//                brand = binding.tvShoeDesigner.text.toString(),
-//
-//                // Shoe Type
-//                type = binding.tvShoeType.text.toString(),
-//
-//                // Shoe Price
-//                price = binding.shoePriceInput.text.toString(),
-//
-//                // Shoe Color
-//                color = binding.tvShoeColor.text.toString(),
-//
-//                // Shoe Size
-//                size = binding.tvShoeSize.text.toString(),
-//
-//                // Shoe Availability
-//                inStock = binding.inStockCheckbox.isChecked,
-//
-//                // Notes
-//                notes = binding.notesInput.text.toString()
-//
-//            )
-//
-//            // Navigate the user back to the Shoe List Fragment
-//            findNavController().navigate(
-//                R.id.action_addShoeFragment_to_shoeListFragment
-//            )
-//
-//        } else {
-//
-//            // If the Edit fields are left blank, then inform the user to provide complete data.
-//            Toast.makeText(
-//                requireContext(),
-//                "Please provide the complete data.",
-//                Toast.LENGTH_SHORT
-//            )
-//                .show()
-//
-//        }
-//
-//    }
-
-    /**
-     * bindShoe() - This function will receive the user's provided data, and initialize the updateShoe() function
-     */
-//    private fun bindShoe(shoe: Shoe) {
-//
-//        // Binding wrapper (shorthand)
-//        binding.apply {
-//
-//            // Shoe Model
-//            shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
-//
-//            // Brand
-//            tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
-//
-//            // Shoe Type
-//            tvShoeType.setText(shoe.shoeType, TextView.BufferType.SPANNABLE)
-//
-//            // Price
-//            shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
-//
-//            // Color
-//            tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
-//
-//            // Shoe Size
-//            tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
-//
-//            // Availability
-//            inStockCheckbox.isChecked = shoe.inStock
-//
-//            // Notes
-//            notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
-//
-//            // This function will be used to populate lists in the dropdown menus
-//            // Note: The keywords are defined in the @res/values/strings.xml file
-//            bindDataWithExposedDropdownMenus()
-//
-//            // TODO Save Button:
-//            //  This function will initialize the data storage process
-//            saveBtn.setOnClickListener {
-//                updateShoe()
-//            }
-//
-//        }
-//
-//    }
-
-    // Safeguard - Populate Lists in Dropdown Menus onResume() lifecycle event.
-    override fun onResume() {
-        super.onResume()
-
-        // This function will be used to populate lists in the dropdown menus
-        // Note: The keywords are defined in the @res/values/strings.xml file
-        bindDataWithExposedDropdownMenus()
-
-    }
-
     // This will capture and send user provided data to the ShoeViewModel.kt for validation
     private fun isValidEntry() = viewModel.isValidEntry(
 
@@ -312,6 +176,16 @@ class ShoeDetailsFragment : Fragment() {
         val size = resources.getStringArray(R.array.shoe_size)
         val arrayAdapterSize = ArrayAdapter(requireContext(), R.layout.dropdown_menu_item, size)
         binding.tvShoeSize.setAdapter(arrayAdapterSize)
+    }
+
+    // Safeguard - Populate Lists in Dropdown Menus onResume() lifecycle event.
+    override fun onResume() {
+        super.onResume()
+
+        // This function will be used to populate lists in the dropdown menus
+        // Note: The keywords are defined in the @res/values/strings.xml file
+        bindDataWithExposedDropdownMenus()
+
     }
 
     override fun onDestroyView() {
