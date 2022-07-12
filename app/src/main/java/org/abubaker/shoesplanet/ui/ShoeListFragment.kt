@@ -14,7 +14,6 @@ import org.abubaker.shoesplanet.BaseApplication
 import org.abubaker.shoesplanet.R
 import org.abubaker.shoesplanet.databinding.FragmentShoeListBinding
 import org.abubaker.shoesplanet.databinding.ListItemShoeBinding
-import org.abubaker.shoesplanet.ui.adapter.ShoeListAdapter
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
 
@@ -52,17 +51,6 @@ class ShoeListFragment : Fragment() {
         // Inflate: @layout/fragment_shoe_list.xml
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding.lifecycleOwner = this
-
-        // Setup the adapter
-        val adapter = ShoeListAdapter { shoe ->
-
-            // Pass the reference of the currently selected shoe item, so the user can be navigated
-            // to the "Details Screen" as defined in the @res/navigation/nav_graph.xml
-            // val action = ShoeListFragmentDirections.actionShoeListFragmentToAddShoeFragment(shoe.id)
-
-            // Navigate the user to the "Shoe Detail" Fragment. @layout/fragment_shoe_details.xml
-            // findNavController().navigate(action)
-        }
 
         // Observe the list of shoes from the viewModel and submit it the adapter
         viewModel.allShoes.observe(this.viewLifecycleOwner) { shoes ->
@@ -102,10 +90,6 @@ class ShoeListFragment : Fragment() {
 
                 }
 
-                // Populate the recyclerview with the records.
-                shoes.let {
-                    adapter.submitList(it)
-                }
 
             }
 

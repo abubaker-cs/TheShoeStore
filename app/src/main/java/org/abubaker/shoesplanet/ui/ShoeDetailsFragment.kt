@@ -52,6 +52,8 @@ class ShoeDetailsFragment : Fragment() {
         _binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
+        binding.lifecycleOwner = this
+
         return binding.root
     }
 

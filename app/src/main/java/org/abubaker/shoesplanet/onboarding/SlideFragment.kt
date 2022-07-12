@@ -90,7 +90,7 @@ class SlideFragment : Fragment() {
 
         // Reference to the #dots_indicator defined in the @layout/fragment_onboarding.xml file,
         // This will be helpful for the user to visually understand the position of current slide.
-        binding.dotsIndicator.setViewPager2(viewPager2!!)
+        binding.dotsIndicator.attachTo(viewPager2!!)
 
     }
 
