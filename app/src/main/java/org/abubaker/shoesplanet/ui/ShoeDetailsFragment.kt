@@ -52,35 +52,25 @@ class ShoeDetailsFragment : Fragment() {
         // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
 
-        viewModel.readyToSave.observe(viewLifecycleOwner) { isSaved ->
+        // Save Button: Observer to initialize the data validation and storage process
+        viewModel.readyToSave.observe(viewLifecycleOwner) { readyToSave ->
 
-            if (isSaved) {
+            if (readyToSave) {
                 addShoe()
             }
 
         }
 
-        return binding.root
-    }
+        // Cancel Button: Navigate user back to the ListFragment
+        viewModel.cancelNewEntryForm.observe(viewLifecycleOwner) { cancelNewEntryForm ->
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+            if (cancelNewEntryForm) {
+                view?.findNavController()?.navigate(R.id.shoeListFragment)
+            }
 
-        // TODO Cancel Button:
-        binding.cancelBtn.setOnClickListener {
-            view.findNavController().navigate(R.id.shoeListFragment)
         }
 
-        //  TODO Button: Save
-        //  The save button will be only shown if the entry ID has not been found in the previous records.
-//        binding.saveBtn.setOnClickListener {
-//
-//            Log.i("Status: ","You cannot bypass me")
-//
-//            // Save the new entry
-//            // addShoe()
-//
-//        }
+        return binding.root
     }
 
     // addShoe() - Add Function, this will create new entry in the database.

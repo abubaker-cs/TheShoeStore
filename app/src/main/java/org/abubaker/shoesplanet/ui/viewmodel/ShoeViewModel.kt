@@ -16,7 +16,12 @@ import org.abubaker.shoesplanet.model.Shoe
  */
 class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
-    // readyToSave
+    // Cancel Button: cancelNewEntryForm
+    private val _cancelNewEntryForm = MutableLiveData<Boolean>()
+    val cancelNewEntryForm: LiveData<Boolean>
+        get() = _cancelNewEntryForm
+
+    // Save Button: readyToSave
     private val _readyToSave = MutableLiveData(false)
     val readyToSave: LiveData<Boolean>
         get() = _readyToSave
@@ -26,12 +31,19 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
         _readyToSave.value = false
     }
 
+    // Save = False
+    fun resetCancelState() {
+        _cancelNewEntryForm.value = false
+    }
+
     // Save = True
     fun btnSave() {
-
-        // Update status
         _readyToSave.value = true
+    }
 
+    // Cancel = True
+    fun btnCancel() {
+        _cancelNewEntryForm.value = true
     }
 
     /**

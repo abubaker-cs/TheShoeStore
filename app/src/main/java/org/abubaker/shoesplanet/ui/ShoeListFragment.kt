@@ -111,6 +111,7 @@ class ShoeListFragment : Fragment() {
 
                 // Reset the value of _readyToSave
                 viewModel.resetSaveState()
+                viewModel.resetCancelState()
 
                 // Navigate the user to the "Add Shoe" screen (@layout/fragment_add_shoe.xml)
                 val action = ShoeListFragmentDirections.actionShoeListFragmentToAddShoeFragment(
