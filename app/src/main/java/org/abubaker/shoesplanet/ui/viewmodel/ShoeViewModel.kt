@@ -18,6 +18,11 @@ import org.abubaker.shoesplanet.model.Shoe
  */
 class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
+    private val _modelNumber = MutableLiveData<String>()
+    val modelNumber: LiveData<String>
+        get() = _modelNumber
+
+
     // This property will set a list of all shoes from the DAO
     val allShoes: LiveData<List<Shoe>> = shoeDao.getShoes().asLiveData()
 
@@ -128,17 +133,17 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
     }
 
     // Action: Delete the selected record
-    fun deleteShoe(shoe: Shoe) {
-
-        // Launching a new coroutine to insert an item in a non-blocking way
-        viewModelScope.launch(Dispatchers.IO) {
-
-            // This will call the DAO method to delete the selected shoe record from the database
-            shoeDao.delete(shoe)
-
-        }
-
-    }
+//    fun deleteShoe(shoe: Shoe) {
+//
+//        // Launching a new coroutine to insert an item in a non-blocking way
+//        viewModelScope.launch(Dispatchers.IO) {
+//
+//            // This will call the DAO method to delete the selected shoe record from the database
+//            shoeDao.delete(shoe)
+//
+//        }
+//
+//    }
 
     // This will validate user provide data, to make sure that no text field was left blank.
     fun isValidEntry(

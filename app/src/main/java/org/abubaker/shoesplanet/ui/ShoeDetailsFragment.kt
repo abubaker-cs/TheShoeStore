@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -66,25 +65,25 @@ class ShoeDetailsFragment : Fragment() {
 
             // This is an observer method, we will use it to pass the user's provided data and start
             // the storage process.
-            viewModel.getShoe(id).observe(this.viewLifecycleOwner) { selectedShoe ->
-
-                // Store the user provide data in the shoe variable
-                shoe = selectedShoe
-
-                // Pass in the user's provided data, and initialize the bindShoe() function
-                bindShoe(shoe)
-
-            }
+//            viewModel.getShoe(id).observe(this.viewLifecycleOwner) { selectedShoe ->
+//
+//                // Store the user provide data in the shoe variable
+//                shoe = selectedShoe
+//
+//                // Pass in the user's provided data, and initialize the bindShoe() function
+//                bindShoe(shoe)
+//
+//            }
 
 
         } else {
 
-            // Cancel Button:
+            // TODO Cancel Button:
             binding.cancelBtn.setOnClickListener {
                 view.findNavController().navigate(R.id.shoeListFragment)
             }
 
-            //  Button: Save
+            //  TODO Button: Save
             //  The save button will be only shown if the entry ID has not been found in the previous records.
             binding.saveBtn.setOnClickListener {
 
@@ -150,106 +149,107 @@ class ShoeDetailsFragment : Fragment() {
     /**
      * updateShoe() - This will update existing record
      */
-    private fun updateShoe() {
-
-        // We wil first validate user provided entries, to make sure that required data was provided.
-        if (isValidEntry()) {
-
-            // This will update existing record
-            viewModel.updateShoe(
-
-                // Unique ID
-                id = navigationArgs.id,
-
-                // Shoe Model
-                model = binding.shoeModelInput.text.toString(),
-
-                // Brand / Designer
-                brand = binding.tvShoeDesigner.text.toString(),
-
-                // Shoe Type
-                type = binding.tvShoeType.text.toString(),
-
-                // Shoe Price
-                price = binding.shoePriceInput.text.toString(),
-
-                // Shoe Color
-                color = binding.tvShoeColor.text.toString(),
-
-                // Shoe Size
-                size = binding.tvShoeSize.text.toString(),
-
-                // Shoe Availability
-                inStock = binding.inStockCheckbox.isChecked,
-
-                // Notes
-                notes = binding.notesInput.text.toString()
-
-            )
-
-            // Navigate the user back to the Shoe List Fragment
-            findNavController().navigate(
-                R.id.action_addShoeFragment_to_shoeListFragment
-            )
-
-        } else {
-
-            // If the Edit fields are left blank, then inform the user to provide complete data.
-            Toast.makeText(
-                requireContext(),
-                "Please provide the complete data.",
-                Toast.LENGTH_SHORT
-            )
-                .show()
-
-        }
-
-    }
+//    private fun updateShoe() {
+//
+//        // We wil first validate user provided entries, to make sure that required data was provided.
+//        if (isValidEntry()) {
+//
+//            // This will update existing record
+//            viewModel.updateShoe(
+//
+//                // Unique ID
+//                id = navigationArgs.id,
+//
+//                // Shoe Model
+//                model = binding.shoeModelInput.text.toString(),
+//
+//                // Brand / Designer
+//                brand = binding.tvShoeDesigner.text.toString(),
+//
+//                // Shoe Type
+//                type = binding.tvShoeType.text.toString(),
+//
+//                // Shoe Price
+//                price = binding.shoePriceInput.text.toString(),
+//
+//                // Shoe Color
+//                color = binding.tvShoeColor.text.toString(),
+//
+//                // Shoe Size
+//                size = binding.tvShoeSize.text.toString(),
+//
+//                // Shoe Availability
+//                inStock = binding.inStockCheckbox.isChecked,
+//
+//                // Notes
+//                notes = binding.notesInput.text.toString()
+//
+//            )
+//
+//            // Navigate the user back to the Shoe List Fragment
+//            findNavController().navigate(
+//                R.id.action_addShoeFragment_to_shoeListFragment
+//            )
+//
+//        } else {
+//
+//            // If the Edit fields are left blank, then inform the user to provide complete data.
+//            Toast.makeText(
+//                requireContext(),
+//                "Please provide the complete data.",
+//                Toast.LENGTH_SHORT
+//            )
+//                .show()
+//
+//        }
+//
+//    }
 
     /**
      * bindShoe() - This function will receive the user's provided data, and initialize the updateShoe() function
      */
-    private fun bindShoe(shoe: Shoe) {
-
-        // Binding wrapper (shorthand)
-        binding.apply {
-
-            // Shoe Model
-            shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
-
-            // Brand
-            tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
-
-            // Shoe Type
-            tvShoeType.setText(shoe.shoeType, TextView.BufferType.SPANNABLE)
-
-            // Price
-            shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
-
-            // Color
-            tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
-
-            // Shoe Size
-            tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
-
-            // Availability
-            inStockCheckbox.isChecked = shoe.inStock
-
-            // Notes
-            notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
-
-            // This function will be used to populate lists in the dropdown menus
-            // Note: The keywords are defined in the @res/values/strings.xml file
-            bindDataWithExposedDropdownMenus()
-
-            // Save Button: This function will initialize the data storage process
-            saveBtn.setOnClickListener {
-                updateShoe()
-            }
-
-        }
-
-    }
+//    private fun bindShoe(shoe: Shoe) {
+//
+//        // Binding wrapper (shorthand)
+//        binding.apply {
+//
+//            // Shoe Model
+//            shoeModelInput.setText(shoe.modelNumber, TextView.BufferType.SPANNABLE)
+//
+//            // Brand
+//            tvShoeDesigner.setText(shoe.brandName, TextView.BufferType.SPANNABLE)
+//
+//            // Shoe Type
+//            tvShoeType.setText(shoe.shoeType, TextView.BufferType.SPANNABLE)
+//
+//            // Price
+//            shoePriceInput.setText(shoe.shoePrice, TextView.BufferType.SPANNABLE)
+//
+//            // Color
+//            tvShoeColor.setText(shoe.shoeColor, TextView.BufferType.SPANNABLE)
+//
+//            // Shoe Size
+//            tvShoeSize.setText(shoe.shoeSize, TextView.BufferType.SPANNABLE)
+//
+//            // Availability
+//            inStockCheckbox.isChecked = shoe.inStock
+//
+//            // Notes
+//            notesInput.setText(shoe.notes, TextView.BufferType.SPANNABLE)
+//
+//            // This function will be used to populate lists in the dropdown menus
+//            // Note: The keywords are defined in the @res/values/strings.xml file
+//            bindDataWithExposedDropdownMenus()
+//
+//            // TODO Save Button:
+//            //  This function will initialize the data storage process
+//            saveBtn.setOnClickListener {
+//                updateShoe()
+//            }
+//
+//        }
+//
+//    }
 
     // Safeguard - Populate Lists in Dropdown Menus onResume() lifecycle event.
     override fun onResume() {
