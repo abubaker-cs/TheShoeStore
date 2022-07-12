@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="shoe"
+            name="shoeViewModel"
             type="org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel"
             />
 
@@ -58,7 +58,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="textAutoComplete"
-                        android:text="@={shoe.modelNumber}"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -281,6 +280,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:onClick="@{() -> shoeViewModel.saveShoe()}"
                         android:text="@string/fab_save"
                         />
 

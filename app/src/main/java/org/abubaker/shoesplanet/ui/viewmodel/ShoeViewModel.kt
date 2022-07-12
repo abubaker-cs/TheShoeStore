@@ -1,5 +1,6 @@
 package org.abubaker.shoesplanet.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import org.abubaker.shoesplanet.data.ShoeDao
@@ -15,6 +16,35 @@ import org.abubaker.shoesplanet.model.Shoe
  * and allow for interaction the the ShoeDao
  */
 class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
+
+    /**
+     *
+     */
+    // isSaved
+    private val _isSaved = MutableLiveData(false)
+    val isSaved: LiveData<Boolean>
+        get() = _isSaved
+
+    // Save = False
+    fun saveInit() {
+        _isSaved.value = false
+    }
+
+    // Save = True
+    fun saveShoe() {
+
+        Log.i("Status: ", "_isSaved: " + _isSaved.value)
+
+        // Update status
+        _isSaved.value = true
+
+        Log.i("Status: ", "_isSaved: " + _isSaved.value)
+
+    }
+
+    /**
+     *
+     */
 
     // MutableLiveData = It is the data whose values can be changed (Variable)
     private val _modelNumber = MutableLiveData<String>() // R/W for Internal

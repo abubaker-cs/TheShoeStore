@@ -46,8 +46,19 @@ class ShoeDetailsFragment : Fragment() {
         _binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
+        // !important : Without it onClick() event will not work in the XML file for Data binding
+        binding.shoeViewModel = viewModel
+
         // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
+
+        viewModel.isSaved.observe(viewLifecycleOwner) { isSaved ->
+
+            if (isSaved) {
+                addShoe()
+            }
+
+        }
 
         return binding.root
     }
@@ -62,12 +73,14 @@ class ShoeDetailsFragment : Fragment() {
 
         //  TODO Button: Save
         //  The save button will be only shown if the entry ID has not been found in the previous records.
-        binding.saveBtn.setOnClickListener {
-
-            // Save the new entry
-            addShoe()
-
-        }
+//        binding.saveBtn.setOnClickListener {
+//
+//            Log.i("Status: ","You cannot bypass me")
+//
+//            // Save the new entry
+//            // addShoe()
+//
+//        }
     }
 
     // addShoe() - Add Function, this will create new entry in the database.

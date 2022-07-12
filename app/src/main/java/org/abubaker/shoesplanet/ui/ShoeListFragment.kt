@@ -109,6 +109,9 @@ class ShoeListFragment : Fragment() {
             // title to display "Add New Shoe"
             addShoeFab.setOnClickListener {
 
+                // Reset the value of save
+                viewModel.saveInit()
+
                 // Navigate the user to the "Add Shoe" screen (@layout/fragment_add_shoe.xml)
                 val action = ShoeListFragmentDirections.actionShoeListFragmentToAddShoeFragment(
                     getString(R.string.add_fragment_title)
