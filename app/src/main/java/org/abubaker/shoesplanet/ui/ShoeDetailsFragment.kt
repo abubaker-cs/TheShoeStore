@@ -52,7 +52,7 @@ class ShoeDetailsFragment : Fragment() {
         // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
 
-        viewModel.isSaved.observe(viewLifecycleOwner) { isSaved ->
+        viewModel.readyToSave.observe(viewLifecycleOwner) { isSaved ->
 
             if (isSaved) {
                 addShoe()

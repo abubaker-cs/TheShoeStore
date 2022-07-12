@@ -16,24 +16,21 @@ import org.abubaker.shoesplanet.model.Shoe
  */
 class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
-    /**
-     *
-     */
-    // isSaved
-    private val _isSaved = MutableLiveData(false)
-    val isSaved: LiveData<Boolean>
-        get() = _isSaved
+    // readyToSave
+    private val _readyToSave = MutableLiveData(false)
+    val readyToSave: LiveData<Boolean>
+        get() = _readyToSave
 
     // Save = False
-    fun saveInit() {
-        _isSaved.value = false
+    fun resetSaveState() {
+        _readyToSave.value = false
     }
 
     // Save = True
-    fun saveShoe() {
+    fun btnSave() {
 
         // Update status
-        _isSaved.value = true
+        _readyToSave.value = true
 
     }
 
