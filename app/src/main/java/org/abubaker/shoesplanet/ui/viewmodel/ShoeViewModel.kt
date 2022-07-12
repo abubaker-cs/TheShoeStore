@@ -50,10 +50,10 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
      *
      */
 
-    // MutableLiveData = It is the data whose values can be changed (Variable)
-    private val _modelNumber = MutableLiveData<String>() // R/W for Internal
-    val modelNumber: LiveData<String>
-        get() = _modelNumber
+    //
+    private val _shoeModel = MutableLiveData<String>()
+    val shoeModel: LiveData<String>
+        get() = _shoeModel
 
     // This property will set a list of all shoes from the DAO
     val allShoes: LiveData<List<Shoe>> = shoeDao.getShoes().asLiveData()
