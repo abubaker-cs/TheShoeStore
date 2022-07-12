@@ -16,15 +16,10 @@ import org.abubaker.shoesplanet.model.Shoe
  */
 class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
 
-//    private val _modelNumber = MutableLiveData<String>()
-//    val modelNumber: LiveData<String>
-//        get() = _modelNumber
-
     // MutableLiveData = It is the data whose values can be changed (Variable)
-    private var _model = MutableLiveData<String>() // R/W for Internal
-    val models: LiveData<String>
-        get() = _model // Write Only | For External
-
+    private val _modelNumber = MutableLiveData<String>() // R/W for Internal
+    val modelNumber: LiveData<String>
+        get() = _modelNumber
 
     // This property will set a list of all shoes from the DAO
     val allShoes: LiveData<List<Shoe>> = shoeDao.getShoes().asLiveData()

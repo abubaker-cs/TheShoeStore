@@ -11,21 +11,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import org.abubaker.shoesplanet.BaseApplication
 import org.abubaker.shoesplanet.R
 import org.abubaker.shoesplanet.databinding.FragmentShoeDetailsBinding
-import org.abubaker.shoesplanet.model.Shoe
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel
 import org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModelFactory
 
 class ShoeDetailsFragment : Fragment() {
 
-    private val navigationArgs: ShoeDetailsFragmentArgs by navArgs()
-
     private var _binding: FragmentShoeDetailsBinding? = null
-
-    private lateinit var shoe: Shoe
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
@@ -52,6 +46,7 @@ class ShoeDetailsFragment : Fragment() {
         _binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
+        // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
 
         return binding.root

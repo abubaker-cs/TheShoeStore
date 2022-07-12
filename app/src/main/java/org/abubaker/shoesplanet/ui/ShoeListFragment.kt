@@ -50,6 +50,8 @@ class ShoeListFragment : Fragment() {
 
         // Inflate: @layout/fragment_shoe_list.xml
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+
+        // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
 
         // Observe the list of shoes from the viewModel and submit it the adapter
