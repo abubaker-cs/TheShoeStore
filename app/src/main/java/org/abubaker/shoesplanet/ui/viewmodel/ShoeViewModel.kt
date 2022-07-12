@@ -1,6 +1,5 @@
 package org.abubaker.shoesplanet.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import org.abubaker.shoesplanet.data.ShoeDao
@@ -33,12 +32,8 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
     // Save = True
     fun saveShoe() {
 
-        Log.i("Status: ", "_isSaved: " + _isSaved.value)
-
         // Update status
         _isSaved.value = true
-
-        Log.i("Status: ", "_isSaved: " + _isSaved.value)
 
     }
 
