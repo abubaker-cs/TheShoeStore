@@ -47,16 +47,20 @@ class ShoeViewModel(private val shoeDao: ShoeDao) : ViewModel() {
     }
 
     /**
-     *
+     * Variables for 2-Way Data Binding
      */
 
-    //
+    // Shoe Model
     private val _shoeModel = MutableLiveData<String>()
     val shoeModel: LiveData<String>
         get() = _shoeModel
 
     // This property will set a list of all shoes from the DAO
     val allShoes: LiveData<List<Shoe>> = shoeDao.getShoes().asLiveData()
+
+    init {
+        _shoeModel.value = ""
+    }
 
     // This will validate user provide data, to make sure that no text field was left blank.
     fun isValidEntry(

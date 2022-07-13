@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         // Inflate Layout: @layout/activity_main.xml
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        //
+        binding.lifecycleOwner = this
+
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 

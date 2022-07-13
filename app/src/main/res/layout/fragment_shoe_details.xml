@@ -7,8 +7,13 @@
     <data>
 
         <variable
-            name="shoeViewModel"
+            name="viewModel"
             type="org.abubaker.shoesplanet.ui.viewmodel.ShoeViewModel"
+            />
+
+        <variable
+            name="shoe"
+            type="org.abubaker.shoesplanet.model.Shoe"
             />
 
     </data>
@@ -58,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="textAutoComplete"
-                        android:text="@={shoeViewModel.shoeModel}"
+                        android:text="@={shoe.modelNumber}"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -272,7 +277,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:onClick="@{() -> shoeViewModel.btnCancel()}"
+                        android:onClick="@{() -> viewModel.btnCancel()}"
                         android:text="@string/fab_cancel"
                         />
 
@@ -282,7 +287,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:onClick="@{() -> shoeViewModel.btnSave()}"
+                        android:onClick="@{() -> viewModel.btnSave()}"
                         android:text="@string/fab_save"
                         />
 

@@ -1,6 +1,7 @@
 package org.abubaker.shoesplanet.model
 
 import androidx.annotation.NonNull
+import androidx.databinding.BaseObservable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -50,4 +51,12 @@ data class Shoe(
     @ColumnInfo(name = "notes")
     val notes: String?
 
-)
+) : BaseObservable()
+
+/**
+ * Android’s Data Binding with Kotlin
+ * https://medium.com/@jencisov/androids-data-binding-with-kotlin-df94a24ffc0f
+ *
+ * Android’s Data Binding’s BaseObservable class and @Bindable annotation in Kotlin
+ * https://medium.com/@jencisov/androids-data-binding-s-baseobservable-class-and-bindable-annotation-in-kotlin-1a5c6682a3c1
+ */
