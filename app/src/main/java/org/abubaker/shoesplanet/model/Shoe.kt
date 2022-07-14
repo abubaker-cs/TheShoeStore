@@ -56,8 +56,8 @@ data class Shoe(
 
 ) : BaseObservable() {
 
-    val oId: Long
-        get() = id
+    // @PrimaryKey(autoGenerate = true)
+    var userId: Long? = id
 
     // 2. Model Name
     @get:Bindable
