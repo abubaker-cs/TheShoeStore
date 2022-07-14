@@ -24,7 +24,8 @@
         ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
         it in this layout file, for:
 
-        1. Scroll View, it is used to let the user scroll vertically regardless of his
+        1. ScrollView, allows the view hierarchy placed within it to be vertically scrolled , with only
+           one direct child element placed as a root-element (such as LinearLayout in my case).
         2. Nested LinearLayout for vertically centering child elements of the form.
         3. I am using both constraints and android:layout_marginTop="" to properly structure
            the layout of this file.
