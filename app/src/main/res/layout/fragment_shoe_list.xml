@@ -7,7 +7,8 @@
     <!--
         Reason for using the ConstraintLayout
         =====================================
-        So, it will be easier to implement, following elements:
+        ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
+        it in this layout file, for easier implementation of the following child elements:
 
         1. LinearLayout
         2. TextView (Centered H/V)
