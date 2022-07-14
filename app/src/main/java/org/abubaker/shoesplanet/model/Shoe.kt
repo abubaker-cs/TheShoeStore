@@ -142,8 +142,8 @@ data class Shoe(
 }
 
 /**
- * References which I used to implement Observables in this @Entity data class
- * ===========================================================================
+ * References which I studied to understand and implement Observables in this @Entity data class
+ * =============================================================================================
  *
  * 1. Advanced Data Binding in Android: Observables
  * https://www.raywenderlich.com/27690200-advanced-data-binding-in-android-observables
