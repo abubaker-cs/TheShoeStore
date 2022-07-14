@@ -16,7 +16,11 @@
     <!--
         Reason for using the FrameLayout
         ================================
+        FrameLayout is used to host a single child. Since for this project I am not using the RecyclerView,
+        that's why to programmatically display individual shoe records on the details screen,
+        I am using FrameLayout to stack child elements (individual rows) over each other.
 
+        This will give an illusion of how RecyclerView works.
     -->
     <FrameLayout
         android:layout_width="match_parent"
@@ -40,7 +44,18 @@
             <!--
                 Reason for using the RelativeLayout
                 ===================================
+                RelativeLayout is helpful in displaying child views in the relative positions.
+                The position of each view can be specified as:
+                    1. Relative to sibling elements or
+                    2. Relative to the parent.
 
+                I am using nested RelativeLayout(s) inside the CardView to stack Shoe Model over
+                Shoe Type while positioned to the right of the shoe thumbnail using the
+                android:layout_toEndOf attribute.
+
+                Moreover another nested RelativeLayout being used for displaying shoe price has been
+                aligned to the right side of the card using the android:layout_alignParentEnd="true"
+                attribute.
             -->
             <RelativeLayout
                 android:layout_width="match_parent"
