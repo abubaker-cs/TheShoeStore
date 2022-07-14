@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-        Reason for using the ConstraintLayout or LinearLayout
-        =====================================================
+<?xml version="1.0" encoding="utf-8"?><!--
+        Reason for using the ConstraintLayout
+        =====================================
+        ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
+        it in this layout file, for:
+
+        1. Vertically and horizontally centering the nav_host_fragment (FragmentContainerView)
+           with full width and height.
 
     -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

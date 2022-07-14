@@ -6,6 +6,13 @@
     <!--
         Reason for using the CoordinateLayout
         =====================================
+        Being as a super-powered FrameLayout, it is intended for:
+        1. As a top-level application decor or chrome layout
+        2. As a container for a specific interaction with one or more child views
+
+        I am using CoordinatorLayout in this file for:
+        1. Implementing the Toolbar
+        2. @including the @layout/content_main
 
     -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
