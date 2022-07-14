@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Template: for dropdown menus used in the Details Screen
+-->
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tv_placeholder"
     style="@style/menu_item"

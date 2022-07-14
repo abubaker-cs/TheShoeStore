@@ -5,7 +5,8 @@
     >
 
     <!--
-        Why I am using ConstrainLayout
+        Reason for using the ConstraintLayout
+        =====================================
         So, it will be easier to implement, following elements:
 
         1. LinearLayout
