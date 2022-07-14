@@ -20,7 +20,7 @@ data class Shoe(
     // @ColumnInfo(name = "id")
     // Primary Key
     @PrimaryKey(autoGenerate = true)
-    val id: Long,
+    var id: Long,
 
     // Model
     @ColumnInfo(name = "model_number")

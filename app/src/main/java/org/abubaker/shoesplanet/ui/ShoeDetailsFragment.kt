@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.abubaker.shoesplanet.BaseApplication
@@ -48,10 +47,12 @@ class ShoeDetailsFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
         // !important : Without it onClick() event will not work in the XML file for Data binding
-        binding.viewModel = ViewModelProvider(this)[ShoeViewModel::class.java]
+        // binding.viewModel = ViewModelProvider(this)[ShoeViewModel::class.java]
 
         // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
+
+        binding.viewModel = viewModel
 
         // Save Button: Observer to initialize the data validation and storage process
         viewModel.readyToSave.observe(viewLifecycleOwner) { readyToSave ->
@@ -81,6 +82,8 @@ class ShoeDetailsFragment : Fragment() {
         if (isValidEntry()) {
 
             viewModel.addShoe(
+
+                0L,
 
                 // Shoe Model
                 binding.shoeModelInput.text.toString(),

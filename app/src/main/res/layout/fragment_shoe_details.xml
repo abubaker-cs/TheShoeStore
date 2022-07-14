@@ -91,7 +91,7 @@
                         android:inputType="none"
                         android:paddingTop="16dp"
                         android:paddingBottom="16dp"
-                        android:text="@string/shoe_brand_text"
+                        android:text="@={shoe.brandName}"
                         tools:ignore="LabelFor"
                         />
 
@@ -121,7 +121,7 @@
                         android:inputType="none"
                         android:paddingTop="16dp"
                         android:paddingBottom="16dp"
-                        android:text="@string/shoe_type_text"
+                        android:text="@={shoe.shoeType}"
                         tools:ignore="LabelFor"
                         />
 
@@ -150,7 +150,7 @@
                         android:inputType="none"
                         android:paddingTop="16dp"
                         android:paddingBottom="16dp"
-                        android:text="@string/shoe_color_text"
+                        android:text="@={shoe.shoeColor}"
                         tools:ignore="LabelFor"
                         />
 
@@ -195,7 +195,7 @@
                             android:inputType="none"
                             android:paddingTop="16dp"
                             android:paddingBottom="16dp"
-                            android:text="@string/shoe_size_text"
+                            android:text="@={shoe.shoeSize}"
                             tools:ignore="LabelFor"
                             />
 
@@ -219,6 +219,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="number"
+                            android:text="@={shoe.shoePrice}"
                             />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -243,6 +244,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textMultiLine"
                         android:maxLines="4"
+                        android:text="@={shoe.notes}"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
