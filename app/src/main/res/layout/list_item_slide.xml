@@ -7,7 +7,12 @@
     <!--
         Reason for using the ConstraintLayout
         =====================================
+        ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
+        it in this layout file, for:
 
+        1. Centering the iconIv (thumbnail) in the layout, with a top-margin of 32dp
+        2. Stacking titleTv (Title) and descTv (Description) with a reference to the iconIv (thumbnail)
+           using app:layout_constraintTop_toBottomOf
     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
