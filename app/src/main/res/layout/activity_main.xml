@@ -12,7 +12,7 @@
 
         I am using CoordinatorLayout in this file for:
         1. Implementing the Toolbar
-        2. @including the @layout/content_main
+        2. @including the @layout/content_main.xml file.
 
     -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
