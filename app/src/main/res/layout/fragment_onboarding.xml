@@ -7,7 +7,18 @@
     <!--
         Reason for using the ConstraintLayout
         =====================================
+        ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
+        it in this layout file, for:
 
+        1. ViewPager2
+        2. DotsIndicator
+        3. Button for Navigation
+
+        In simple words, I am using ConstraintLayout for positioning and stacking viewPager,
+        dots_indicator and controllerBtn using the app:layout_constraintTop_toBottomOf attribute.
+
+        Note I am also using the android:layout_marginTop="" attribute for creating proper gap
+        between elements.
     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
