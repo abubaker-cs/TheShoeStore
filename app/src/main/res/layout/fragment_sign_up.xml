@@ -7,7 +7,20 @@
     <!--
         Reason for using the LinearLayout
         =================================
+        LinearLayout helps in aligning all child elements in a single direction, i.e.:
+            1. Vertically or
+            2. Horizontally.
 
+        I am using this layout type to align all child elements vertically centered in the parent
+        view using the android:orientation="vertical" attribute.
+
+        I am using both nested LinearLayout and RelativeLayout where it seems appropriate in this file.
+        Since, RelativeLayout is helpful in displaying child views in the relative positions, that's why
+        btn_back and Create an Account text have been placed inside the RelativeLayout.
+
+        The remaining child elements have been displayed using the LinearLayout to vertical center in
+        the viewport. Lastly, android:layout_marginTop="" attribute has been used to create proper gap
+        between child components.
     -->
     <LinearLayout
         android:layout_width="match_parent"
