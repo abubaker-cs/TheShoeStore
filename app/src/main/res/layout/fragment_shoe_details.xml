@@ -21,6 +21,13 @@
     <!--
         Reason for using the ConstraintLayout
         =====================================
+        ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
+        it in this layout file, for:
+
+        1. Scroll View, it is used to let the user scroll vertically regardless of his
+        2. Nested LinearLayout for vertically centering child elements of the form.
+        3. I am using both constraints and android:layout_marginTop="" to properly structure
+           the layout of this file.
 
     -->
     <androidx.constraintlayout.widget.ConstraintLayout
