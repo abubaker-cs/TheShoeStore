@@ -2,6 +2,8 @@ package org.abubaker.shoesplanet.model
 
 import androidx.annotation.NonNull
 import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
+import androidx.databinding.library.baseAdapters.BR
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -17,43 +19,107 @@ data class Shoe(
     // @ColumnInfo(name = "id")
     // Primary Key
     @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
+    val _id: Long,
 
     // Model
     @ColumnInfo(name = "model_number")
-    val modelNumber: String,
+    var _modelNumber: String,
 
     // Brand / Designer
     @NonNull @ColumnInfo(name = "brand_name")
-    val brandName: String,
+    val _brandName: String,
 
     // Footwear
     @NonNull @ColumnInfo(name = "shoe_type")
-    val shoeType: String,
+    val _shoeType: String,
 
     // Price
     @NonNull @ColumnInfo(name = "shoe_price")
-    val shoePrice: String,
+    val _shoePrice: String,
 
     // Color
     @NonNull @ColumnInfo(name = "shoe_color")
-    val shoeColor: String,
+    val _shoeColor: String,
 
     // Size
     @NonNull @ColumnInfo(name = "shoe_size")
-    val shoeSize: String,
+    val _shoeSize: String,
 
     // Stock Availability
     @ColumnInfo(name = "in_stock")
-    val inStock: Boolean,
+    val _inStock: Boolean,
 
     // Notes
     @ColumnInfo(name = "notes")
-    val notes: String?
+    val _notes: String?
 
-) : BaseObservable()
+) : BaseObservable() {
+
+    val id: Long
+        get() = _id
+
+    @get:Bindable
+    var modelNumber: String = _modelNumber
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.modelNumber)
+        }
+
+    @get:Bindable
+    var brandName: String = _brandName
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.brandName)
+        }
+
+    @get:Bindable
+    var shoeType: String = _shoeType
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.shoeType)
+        }
+
+    @get:Bindable
+    var shoePrice: String = _shoePrice
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.shoePrice)
+        }
+
+    @get:Bindable
+    var shoeColor: String = _shoeColor
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.shoeColor)
+        }
+
+    @get:Bindable
+    var shoeSize: String = _shoeSize
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.shoeSize)
+        }
+
+    @get:Bindable
+    var inStock: Boolean = _inStock
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.inStock)
+        }
+
+    @get:Bindable
+    var notes: String? = _notes
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.notes)
+        }
+
+}
 
 /**
+ * Advanced Data Binding in Android: Observables
+ * https://www.raywenderlich.com/27690200-advanced-data-binding-in-android-observables
+ *
  * Android’s Data Binding with Kotlin
  * https://medium.com/@jencisov/androids-data-binding-with-kotlin-df94a24ffc0f
  *
