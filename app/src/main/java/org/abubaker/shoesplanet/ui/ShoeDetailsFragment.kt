@@ -46,9 +46,6 @@ class ShoeDetailsFragment : Fragment() {
         _binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
-        // !important : Without it onClick() event will not work in the XML file for Data binding
-        // binding.viewModel = ViewModelProvider(this)[ShoeViewModel::class.java]
-
         // Specify the current activity as the lifecycle owner.
         binding.lifecycleOwner = this
 

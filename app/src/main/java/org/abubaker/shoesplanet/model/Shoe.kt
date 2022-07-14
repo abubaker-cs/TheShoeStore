@@ -79,7 +79,7 @@ data class Shoe(
             notifyPropertyChanged(BR.oBrandName)
         }
 
-    // 3. Footwear Type
+    // 3. Shoe Type
     @get:Bindable
     @Ignore
     var oShoeType: String = ""
@@ -142,12 +142,15 @@ data class Shoe(
 }
 
 /**
- * Advanced Data Binding in Android: Observables
+ * References which I used to implement Observables in this @Entity data class
+ * ===========================================================================
+ *
+ * 1. Advanced Data Binding in Android: Observables
  * https://www.raywenderlich.com/27690200-advanced-data-binding-in-android-observables
  *
- * Android’s Data Binding with Kotlin
+ * 2. Android’s Data Binding with Kotlin
  * https://medium.com/@jencisov/androids-data-binding-with-kotlin-df94a24ffc0f
  *
- * Android’s Data Binding’s BaseObservable class and @Bindable annotation in Kotlin
+ * 3. Android’s Data Binding’s BaseObservable class and @Bindable annotation in Kotlin
  * https://medium.com/@jencisov/androids-data-binding-s-baseobservable-class-and-bindable-annotation-in-kotlin-1a5c6682a3c1
  */

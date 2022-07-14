@@ -97,7 +97,7 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Footwear Type -->
+                <!-- Shoe Type -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/shoe_type"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
