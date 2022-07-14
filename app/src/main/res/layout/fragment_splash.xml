@@ -8,7 +8,11 @@
     <!--
         Reason for using the ConstraintLayout
         =====================================
+        ConstraintLayout offers combined benefits of both LinearLayout and RelativeLayout. I am using
+        it in this layout file, for:
 
+        1. Positioning the CircularProgressBar horizontally centered in the parent view,
+           with a bottom margin of 96dp.
     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
