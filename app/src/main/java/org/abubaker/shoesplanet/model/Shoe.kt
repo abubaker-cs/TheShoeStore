@@ -6,6 +6,7 @@ import androidx.databinding.Bindable
 import androidx.databinding.library.baseAdapters.BR
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 /**
@@ -19,99 +20,123 @@ data class Shoe(
     // @ColumnInfo(name = "id")
     // Primary Key
     @PrimaryKey(autoGenerate = true)
-    val _id: Long,
+    val id: Long,
 
     // Model
     @ColumnInfo(name = "model_number")
-    var _modelNumber: String,
+    var modelNumber: String,
 
     // Brand / Designer
     @NonNull @ColumnInfo(name = "brand_name")
-    val _brandName: String,
+    var brandName: String,
 
     // Footwear
     @NonNull @ColumnInfo(name = "shoe_type")
-    val _shoeType: String,
+    var shoeType: String,
 
     // Price
     @NonNull @ColumnInfo(name = "shoe_price")
-    val _shoePrice: String,
+    var shoePrice: String,
 
     // Color
     @NonNull @ColumnInfo(name = "shoe_color")
-    val _shoeColor: String,
+    var shoeColor: String,
 
     // Size
     @NonNull @ColumnInfo(name = "shoe_size")
-    val _shoeSize: String,
+    var shoeSize: String,
 
     // Stock Availability
     @ColumnInfo(name = "in_stock")
-    val _inStock: Boolean,
+    var inStock: Boolean,
 
     // Notes
     @ColumnInfo(name = "notes")
-    val _notes: String?
+    var notes: String?
 
 ) : BaseObservable() {
 
-    val id: Long
-        get() = _id
+    val oId: Long
+        get() = id
 
+    // 2. Model Name
     @get:Bindable
-    var modelNumber: String = _modelNumber
+    @Ignore // This annotation will tell Room to not create a new column
+    var oModelNumber: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.modelNumber)
+            modelNumber = value
+            notifyPropertyChanged(BR.oModelNumber)
         }
 
+    // 2. Brand or Designer
     @get:Bindable
-    var brandName: String = _brandName
+    @Ignore
+    var oBrandName: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.brandName)
+            brandName = value
+            notifyPropertyChanged(BR.oBrandName)
         }
 
+    // 3. Footwear Type
     @get:Bindable
-    var shoeType: String = _shoeType
+    @Ignore
+    var oShoeType: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.shoeType)
+            shoeType = value
+            notifyPropertyChanged(BR.oShoeType)
         }
 
+    // 4. PRice
     @get:Bindable
-    var shoePrice: String = _shoePrice
+    @Ignore
+    var oShoePrice: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.shoePrice)
+            shoePrice = value
+            notifyPropertyChanged(BR.oShoePrice)
         }
 
+    // 5. Color
     @get:Bindable
-    var shoeColor: String = _shoeColor
+    @Ignore
+    var oShoeColor: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.shoeColor)
+            shoeColor = value
+            notifyPropertyChanged(BR.oShoeColor)
         }
 
+    // 6. Size
     @get:Bindable
-    var shoeSize: String = _shoeSize
+    @Ignore
+    var oShoeSize: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.shoeSize)
+            shoeSize = value
+            notifyPropertyChanged(BR.oShoeSize)
         }
 
+    // 7. Stock Availability
     @get:Bindable
-    var inStock: Boolean = _inStock
+    @Ignore
+    var oInStock: Boolean = false
         set(value) {
             field = value
-            notifyPropertyChanged(BR.inStock)
+            inStock = value
+            notifyPropertyChanged(BR.oInStock)
         }
 
+    // 8. Notes
     @get:Bindable
-    var notes: String? = _notes
+    @Ignore
+    var oNotes: String = ""
         set(value) {
             field = value
-            notifyPropertyChanged(BR.notes)
+            notes = value
+            notifyPropertyChanged(BR.oNotes)
         }
 
 }
